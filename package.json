@@ -13,13 +13,12 @@
   "license": "MIT",
   "scripts": {
     "postinstall": "npx husky install && npx playwright install",
-    "clean:dist": "npx rimraf dist",
-    "clean:report": "npx rimraf playwright-report",
     "test:chrome": "npx playwright test --headed --project=chromium",
     "test:firefox": "npx playwright test --headed --project=firefox",
     "test:safari": "npx playwright test --headed --project=webkit",
     "lint": "npx eslint --ext ts --ext tsx ./src",
     "lint:fix": "npx eslint --ext ts --ext tsx ./src --fix",
+    "prettier": "prettier --write ./src/**/*.{html,css,scss,ts,tsx}",
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview"
@@ -80,4 +79,3 @@
     "src/**/*.{ts,tsx}": "npx eslint"
   }
 }
-
