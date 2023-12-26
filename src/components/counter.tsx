@@ -1,20 +1,28 @@
 import React, { useState } from 'react';
 
-import Button from './button';
+import { Button } from './ui/button';
+import { Card, CardContent, CardFooter, CardHeader } from './ui/card';
 
 export default function Counter() {
   const [count, setCount] = useState<number>(0);
 
   return (
-    <>
-      <h1 className='mb-4 text-4xl'>Vite ReactTS — Starter</h1>
-      <section className='container flex h-72 w-96 flex-col items-center justify-between rounded-xl border border-tertiary bg-secondary py-10'>
+    <Card className='border-border border bg-secondary shadow-md'>
+      <CardHeader>
+        <h1 className='text-2xl'>Vite React TypeScript</h1>
+        <h2 className='text-lg'>with shadcn/ui</h2>
+      </CardHeader>
+      <CardContent className='flex items-center justify-center'>
         <h2 className='text-6xl'>{count}</h2>
-        <div className='flex gap-x-5'>
-          <Button text='+ 1' onClick={() => setCount((previousCount) => previousCount + 1)} />
-          <Button text='- 1' onClick={() => setCount((previousCount) => previousCount - 1)} />
-        </div>
-      </section>
-    </>
+      </CardContent>
+      <CardFooter className='flex items-center justify-evenly'>
+        <Button className='w-16' onClick={() => setCount((previousCount) => previousCount + 1)}>
+          + 1
+        </Button>
+        <Button className='w-16' onClick={() => setCount((previousCount) => previousCount - 1)}>
+          - 1
+        </Button>
+      </CardFooter>
+    </Card>
   );
 }

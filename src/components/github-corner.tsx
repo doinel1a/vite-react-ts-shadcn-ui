@@ -13,8 +13,8 @@ export default function GithubCorner({ title, url }: IGithubCorner) {
         height='80'
         viewBox='0 0 250 250'
         style={{
-          fill: 'var(--color)',
-          color: 'var(--primary)',
+          fill: 'hsl(var(--foreground))',
+          color: 'hsl(var(--background))',
           position: 'absolute',
           top: 0,
           border: 0,
