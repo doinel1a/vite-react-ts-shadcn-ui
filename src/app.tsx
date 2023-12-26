@@ -8,7 +8,7 @@ import GithubCorner from './components/github-corner';
 function App() {
   return (
     <BrowserRouter>
-      <main className='flex h-screen flex-col items-center justify-center bg-primary text-color'>
+      <main className='flex h-screen flex-col items-center justify-center'>
         <GithubCorner
           title='Get started on GitHub'
           url='https://github.com/doinel1a/vite-react-ts-starter'
