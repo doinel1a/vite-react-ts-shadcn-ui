@@ -13,13 +13,12 @@
   "license": "MIT",
   "scripts": {
     "postinstall": "npx husky install && npx playwright install",
-    "clean:dist": "npx rimraf dist",
-    "clean:report": "npx rimraf playwright-report",
     "test:chrome": "npx playwright test --headed --project=chromium",
     "test:firefox": "npx playwright test --headed --project=firefox",
     "test:safari": "npx playwright test --headed --project=webkit",
     "lint": "npx eslint --ext ts --ext tsx ./src",
     "lint:fix": "npx eslint --ext ts --ext tsx ./src --fix",
+    "prettier": "prettier --write **/**/*.{html,css,scss,js,cjs,mjs,ts,tsx}",
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview"
@@ -66,6 +65,7 @@
     "eslint-plugin-sonarjs": "^0.23.0",
     "eslint-plugin-unicorn": "^50.0.1",
     "husky": "^8.0.3",
+    "lint-staged": "^15.2.0",
     "postcss": "^8.4.32",
     "prettier": "^3.1.1",
     "prettier-plugin-tailwindcss": "^0.5.9",
@@ -73,5 +73,9 @@
     "tailwindcss": "^3.4.0",
     "typescript": "^5.3.3",
     "vite": "^5.0.10"
+  },
+  "lint-staged": {
+    "src/**/*.{html,css,scss,ts,tsx}": "npx prettier --write",
+    "src/**/*.{ts,tsx}": "npx eslint"
   }
 }
