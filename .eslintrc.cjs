@@ -23,18 +23,6 @@ module.exports = {
     sourceType: 'module'
   },
   settings: {
-    'import/parsers': {
-      '@typescript-eslint/parser': ['.ts', '.tsx']
-    },
-    'import/resolver': {
-      node: {
-        extensions: ['.ts', '.tsx'],
-        moduleDirectory: ['node_modules', 'src/']
-      },
-      typescript: {
-        alwaysTryTypes: true
-      }
-    },
     react: {
       pragma: 'React',
       version: 'detect'
