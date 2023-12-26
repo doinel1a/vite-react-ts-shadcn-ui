@@ -54,8 +54,17 @@
     @apply border-border;
   }
 
+  html,
+  body {
+    @apply h-full w-full;
+  }
+
   body {
     @apply bg-background text-foreground;
+  }
+
+  #root {
+    @apply flex h-full w-full flex-col;
   }
 
   .github-corner:hover .octo-arm {

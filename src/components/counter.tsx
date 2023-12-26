@@ -7,7 +7,7 @@ export default function Counter() {
   const [count, setCount] = useState<number>(0);
 
   return (
-    <Card>
+    <Card className='border-border border bg-secondary shadow-md'>
       <CardHeader>
         <h1 className='text-2xl'>Vite React TypeScript</h1>
         <h2 className='text-lg'>with shadcn/ui</h2>
