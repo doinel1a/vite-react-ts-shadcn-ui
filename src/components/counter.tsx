@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import { Button } from './ui/button';
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from './ui/card';
+import { Card, CardContent, CardFooter, CardHeader } from './ui/card';
 
 export default function Counter() {
   const [count, setCount] = useState<number>(0);
@@ -9,7 +9,8 @@ export default function Counter() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Vite ReactTS — Starter</CardTitle>
+        <h1 className='text-2xl'>Vite React TypeScript</h1>
+        <h2 className='text-lg'>with shadcn/ui</h2>
       </CardHeader>
       <CardContent className='flex items-center justify-center'>
         <h2 className='text-6xl'>{count}</h2>
