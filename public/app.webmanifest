@@ -1,8 +1,8 @@
 {
   "lang": "en-EN",
-  "name": "Vite ReactTS — Starter",
-  "short_name": "ReactTS — Starter",
-  "description": "Start a React TypeScript App, SPA, landing page or website using Vite, Babel, Core-JS, SASS / SCSS, Tailwind CSS and much more, in just 30 seconds.",
+  "name": "Vite React.js TypeScript & Shadcn/ui — Template",
+  "short_name": "React.js TypeScript & Shadcn/ui — Template",
+  "description": "Boilerplate template designed to quickly bootstrap a React.js Web App, SPA, website or landing page with TypeScript, Shadcn/ui, TailwindCSS, Vite, SWC, ESLint, Husky and much more in just 30 seconds.",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",
@@ -10,15 +10,15 @@
   "background_color": "#000",
   "icons": [
     {
-      "src": "/favicon/favicon-192.png",
+      "src": "/favicon/favicon-192.webp",
       "sizes": "192x192",
-      "type": "image/png",
+      "type": "image/webp",
       "purpose": "maskable"
     },
     {
-      "src": "/favicon/favicon-512.png",
+      "src": "/favicon/favicon-512.webp",
       "sizes": "512x512",
-      "type": "image/png",
+      "type": "image/webp",
       "purpose": "maskable"
     }
   ]
