@@ -13,13 +13,12 @@
   "license": "MIT",
   "scripts": {
     "postinstall": "npx husky install && npx playwright install",
-    "test:chrome": "npx playwright test --headed --project=chromium",
-    "test:firefox": "npx playwright test --headed --project=firefox",
-    "test:safari": "npx playwright test --headed --project=webkit",
     "lint": "npx eslint --ext ts --ext tsx ./src",
     "lint:fix": "npx eslint --ext ts --ext tsx ./src --fix",
     "prettier": "prettier --write **/**/*.{html,css,scss,js,cjs,mjs,ts,tsx}",
     "dev": "vite",
+    "test": "npx playwright test",
+    "test:ui": "npx playwright test --ui",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
