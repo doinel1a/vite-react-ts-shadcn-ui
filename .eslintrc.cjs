@@ -29,6 +29,7 @@ module.exports = {
       version: 'detect'
     }
   },
+  ignorePatterns: ['**/*.html'],
   rules: {
     // typescript
     '@typescript-eslint/array-type': 'off',

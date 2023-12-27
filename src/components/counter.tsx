@@ -13,13 +13,23 @@ export default function Counter() {
         <h2 className='text-lg'>with shadcn/ui</h2>
       </CardHeader>
       <CardContent className='flex items-center justify-center'>
-        <h2 className='text-6xl'>{count}</h2>
+        <h2 data-testid='count' className='text-6xl'>
+          {count}
+        </h2>
       </CardContent>
       <CardFooter className='flex items-center justify-evenly'>
-        <Button className='w-16' onClick={() => setCount((previousCount) => previousCount + 1)}>
+        <Button
+          data-testid='increase-count'
+          className='w-16'
+          onClick={() => setCount((previousCount) => previousCount + 1)}
+        >
           + 1
         </Button>
-        <Button className='w-16' onClick={() => setCount((previousCount) => previousCount - 1)}>
+        <Button
+          data-testid='decrease-count'
+          className='w-16'
+          onClick={() => setCount((previousCount) => previousCount - 1)}
+        >
           - 1
         </Button>
       </CardFooter>

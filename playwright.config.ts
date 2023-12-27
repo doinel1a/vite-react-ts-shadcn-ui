@@ -1,5 +1,7 @@
 import { defineConfig, devices } from '@playwright/test';
 
+import _config from './_config';
+
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -10,7 +12,7 @@ import { defineConfig, devices } from '@playwright/test';
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-  testDir: './tests',
+  testDir: '__tests__',
   /* Maximum time one test can run for. */
   timeout: 30 * 1000,
   expect: {
@@ -77,14 +79,14 @@ export default defineConfig({
     //   name: 'Google Chrome',
     //   use: { channel: 'chrome' },
     // },
-  ]
+  ],
 
   /* Folder for test artifacts such as screenshots, videos, traces, etc. */
-  // outputDir: 'test-results/',
+  outputDir: '__tests_results__',
 
   /* Run your local dev server before starting the tests */
-  // webServer: {
-  //   command: 'npm run start',
-  //   port: 3000,
-  // },
+  webServer: {
+    command: 'npm run dev',
+    port: _config.server.port
+  }
 });
