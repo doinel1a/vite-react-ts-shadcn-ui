@@ -1,21 +1,13 @@
 [node]: https://nodejs.org/en
-[yarn]: https://yarnpkg.com
-[pnpm]: https://pnpm.io
-[demo]: https://vite-react-ts-starter.d1a.app/
-[license]: https://github.com/doinel1a/vite-react-ts-starter/blob/main/LICENSE
-[code-of-conduct]: https://github.com/doinel1a/vite-react-ts-starter/blob/main/CODE_OF_CONDUCT.md
-[issues]: https://github.com/doinel1a/vite-react-ts-starter/issues
-[pulls]: https://github.com/doinel1a/vite-react-ts-starter/pulls
+[pnpm]: https://pnpm.io/installation
+[yarn]: https://yarnpkg.com/getting-started/install
+[demo]: https://vite-react-ts-shadcn-ui.d1a.app/
+[license]: https://github.com/doinel1a/vite-react-ts-shadcn-ui/blob/main/LICENSE
+[code-of-conduct]: https://github.com/doinel1a/vite-react-ts-shadcn-ui/blob/main/CODE_OF_CONDUCT.md
+[issues]: https://github.com/doinel1a/vite-react-ts-shadcn-ui/issues
+[pulls]: https://github.com/doinel1a/vite-react-ts-shadcn-ui/pulls
 [browserslist]: https://browsersl.ist/#q=last+3+versions%2C%3E+0.2%25%2C+not+dead
 [commitlint]: https://github.com/conventional-changelog/commitlint/#what-is-commitlint
-[vite-react-ts-repo]: https://github.com/doinel1a/vite-react-ts-starter
-[vite-react-js-repo]: https://github.com/doinel1a/vite-react-js-starter
-[vite-vanilla-ts-repo]: ''
-[vite-vanilla-js-repo]: https://github.com/doinel1a/vite-vanilla-js
-[wp-react-ts-repo]: https://github.com/doinel1a/react-ts-starter
-[wp-react-js-repo]: ''
-[wp-vanilla-ts-repo]: ''
-[wp-vanilla-js-repo]: https://github.com/doinel1a/vanilla-js-starter
 [react-icon]: https://skillicons.dev/icons?i=react
 [ts-icon]: https://skillicons.dev/icons?i=ts
 [js-icon]: https://skillicons.dev/icons?i=js
@@ -26,11 +18,11 @@
 [opera-icon]: https://github.com/alrra/browser-logos/blob/main/src/opera/opera_64x64.png
 [safari-icon]: https://github.com/alrra/browser-logos/blob/main/src/safari/safari_64x64.png
 
-# Vite React Typescript — Template
+# Vite React TypeScript & Shadcn/ui — Template
 
-Are you looking for a way to supercharge your development experience and build stunning web applications with ease? You are in the right place!
-This development starter template is the ultimate solution to help you getting started on your project in no time, without the hassle of setting up and configuring your development environment from scratch each time you start working.
-This template is ideal for front-end developers who want to build modern, fast and reliable web applications with the latest cutting edge technologies such as **React JS**, **TypeScript**, **Tailwind CSS**, **ESLint**, **Prettier**, **Husky**, **Vite** and much more!
+Are you looking for a way to supercharge your development experience and build stunning web applications with ease?
+This development starter template is the ultimate solution to help you getting started on your project in no time, without the hassle of setting up and configuring your development environment from scratch each time you start working.s
+This template is ideal for front-end developers who want to build modern, fast and reliable web applications with the latest cutting edge technologies such as **React.js**, **TypeScript**, **Shadcn/ui**, **TailwindCSS**, **ESLint**, **Prettier**, **Husky**, **Vite** and much more!
 
 ---
 
@@ -42,7 +34,6 @@ This template is ideal for front-end developers who want to build modern, fast a
 
 - :computer: [Getting started](#computer-getting-started "Go to 'Getting started' section")
 - :battery: [Features](#battery-features "Go to 'Features' section")
-- :arrows_clockwise: [Versions](#arrows_clockwise-versions "Go to 'Versions' section")
 - :globe_with_meridians: [Browsers support](#globe_with_meridians-browsers-support "Go to 'Browsers support' section")
 - :busts_in_silhouette: [Contribute](#busts_in_silhouette-contribute "Go to 'Contribute' section")
 - :bookmark_tabs: [License](#bookmark_tabs-license "Go to 'License' section")
@@ -56,15 +47,17 @@ This template is ideal for front-end developers who want to build modern, fast a
 
 - JavaScript runtime **[node.js][node]**;
 - **(OPTIONAL)** Alternative package manager:
-  - **[PNPM][pnpm]** `npm install --global pnpm` <br /> or
-  - **[Yarn][yarn]** `npm install --global yarn`;
+  - **[pnpm][pnpm]** <br /> or
+  - **[yarn][yarn]**
 
 ### Start developing:
 
 - Get the repository:
   - click **"Use this template"** &nbsp; or &nbsp; **"Fork"** button <br /> alternately
   - **clone** the repository through your terminal: <br />
-    `git clone https://github.com/doinel1a/vite-react-ts-starter YOUR-PROJECT-NAME`;
+    ```bash
+    git clone https://github.com/doinel1a/vite-react-ts-shadcn-ui YOUR-PROJECT-NAME
+    ```
 - Open your terminal or code editor to the path your project is located, and run:
 
   |                                                  | **NPM**           | **PNPM**       | **Yarn**       |
@@ -74,7 +67,7 @@ This template is ideal for front-end developers who want to build modern, fast a
   | To **build** your app **for production**         | `npm run build`   | `pnpm build`   | `yarn build`   |
   | To **preview** your **production optimized app** | `npm run preview` | `pnpm preview` | `yarn preview` |
 
-[Back to:arrow_up:](#vite-react-typescript--template "Back to 'Table of contents' section")
+[Back to :arrow_up:](#vite-react-typescript--shadcnui--template "Back to 'Table of contents' section")
 
 ---
 
@@ -82,48 +75,23 @@ This template is ideal for front-end developers who want to build modern, fast a
 
 This repository comes 🔋 packed with:
 
-- **React JS**: A library for building user interfaces that uses a declarative approach and provides a way to create reusable UI components;
-- **TypeScript**: A programming language that adds static type checking to JavaScript and provides additional features such as interfaces, enums, and classes;
-- **Tailwind CSS**: A utility-first CSS framework that provides predefined classes for common styles and layout patterns, allowing quick styling without writing custom CSS;
-- **SASS**: A CSS preprocessor that adds features such as variables, nesting, and mixins to CSS, making it easier to write and maintain large CSS codebases;
-- **PostCSS**: A tool for transforming CSS with JavaScript plugins, allowing to add new features to CSS and improve the development process;
-- **Fontawesome**: A library with over 5000 free icons that can be easily customized and used in web applications;
-- **Playwright**: A library for automating web browser interactions, allowing the writing of end-to-end tests and perform browser automation tasks;
-- **Vite**: A build tool and development server that provides fast and efficient development and production builds for modern web applications;
+- **React.js**;
+- **TypeScript**;
+- **Shadcn/ui**;
+- **TailwindCSS**;
+- **SASS**;
+- **PostCSS**;
 
 And with tools that enhance the development experience:
 
-- **ESLint**: A tool for enforcing coding standards and identifying potential errors in the code;
-- **Prettier**: A code formatter that automatically formats code to conform to a consistent style, making it easier to read and maintain;
-- **Husky**: A Git hook manager that allows easy set up and configuration of Git hooks, which are scripts that run at certain points in the Git workflow;
-- **Commitlint**: A tool for enforcing commit message conventions in Git repositories, helping to ensure consistent and informative commit messages;
+- **ESLint**;
+- **Prettier**;
+- **Husky**;
+- **Commitlint**;
+- **Lint staged**;
+- **Playwright**;
 
-[Back to:arrow_up:](#vite-react-typescript--template "Back to 'Table of contents' section")
-
----
-
-## :arrows_clockwise: Versions
-
-This repository comes configured with 2 of the industry standards for development tools: **Webpack** and **Vite**. <br />
-Both tools support **SWC (Speedy Web Compiler)**, a **Rust-based compiler**; Vite is optimized for it out of the box.
-
-### Vite (SWC compiler)
-
-Is a simple and fast solution thanks to it's "zero-config" approach which offers a smoother development experience.
-
-|                 React - TypeScript                 |                             React - JavaScript                              |     |       Vanilla TypeScript        |                  Vanilla JavaScript                  |
-| :------------------------------------------------: | :-------------------------------------------------------------------------: | :-: | :-----------------------------: | :--------------------------------------------------: |
-| ![React][react-icon] & ![TS][ts-icon] <br /> **/** | ![React][react-icon] & ![JS][js-icon] <br /> **[Repo][vite-react-js-repo]** |     | ![TS][ts-icon] <br /> **Soon!** | ![JS][js-icon] <br /> **[Repo][vite-react-js-repo]** |
-
-### Webpack (Babel compiler)
-
-Is more a flexible solution, capable of handling complex configurations.
-
-|                            React - TypeScript                             |                   React - JavaScript                   |     |       Vanilla TypeScript        |                  Vanilla JavaScript                  |
-| :-----------------------------------------------------------------------: | :----------------------------------------------------: | :-: | :-----------------------------: | :--------------------------------------------------: |
-| ![React][react-icon] & ![TS][ts-icon] <br /> **[Repo][wp-react-ts-repo]** | ![React][react-icon] & ![JS][js-icon] <br /> **Soon!** |     | ![TS][ts-icon] <br /> **Soon!** | ![JS][js-icon] <br /> **[Repo][wp-vanilla-js-repo]** |
-
-[Back to:arrow_up:](#vite-react-typescript--template "Back to 'Table of contents' section")
+[Back to :arrow_up:](#vite-react-typescript--shadcnui--template "Back to 'Table of contents' section")
 
 ---
 
@@ -145,7 +113,7 @@ Update the configuration [here][browserslist] and check in real-time the **globa
 
 **\* The more versions to support, larger JS and CSS bundles size will be.**
 
-[Back to:arrow_up:](#vite-react-typescript--template "Back to 'Table of contents' section")
+[Back to :arrow_up:](#vite-react-typescript--shadcnui--template "Back to 'Table of contents' section")
 
 ---
 
@@ -170,7 +138,7 @@ Please check the [**contributing guide**][code-of-conduct] for details on how to
     4.  Push your new branch: `git push origin fix/BUG-FIX`;
 4.  **Open a new [pull request][pulls];**
 
-[Back to:arrow_up:](#vite-react-typescript--template "Back to 'Table of contents' section")
+[Back to :arrow_up:](#vite-react-typescript--shadcnui--template "Back to 'Table of contents' section")
 
 ---
 
@@ -180,7 +148,7 @@ All logos and trademarks are the property of their respective owners.
 Everything else is distributed under the **MIT License** .  
 See the [LICENSE][license] file for more informations.
 
-[Back to:arrow_up:](#vite-react-typescript--template "Back to 'Table of contents' section")
+[Back to :arrow_up:](#vite-react-typescript--shadcnui--template "Back to 'Table of contents' section")
 
 ---
 
@@ -191,4 +159,4 @@ Special thanks to:
 - [alrra](https://github.com/alrra) for [browser-logos](https://github.com/alrra/browser-logos);
 - [tandpfun](https://github.com/tandpfun) for [skill-icons](https://github.com/tandpfun/skill-icons);
 
-[Back to:arrow_up:](#vite-react-typescript--template "Back to 'Table of contents' section")
+[Back to :arrow_up:](#vite-react-typescript--shadcnui--template "Back to 'Table of contents' section")
