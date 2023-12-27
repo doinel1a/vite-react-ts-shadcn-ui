@@ -17,7 +17,16 @@ export default defineConfig({
     react(),
     partytownVite({
       dest: path.join(__dirname, 'dist', '~partytown')
-    })
+    }),
+    {
+      name: 'dynamic-html',
+      transformIndexHtml(html) {
+        return html
+          .replace(/%TITLE%/g, _config.metadata.title)
+          .replace(/%DESCRIPTION%/g, _config.metadata.description)
+          .replace(/%KEYWORDS%/g, _config.metadata.keywords);
+      }
+    }
   ],
   server: {
     host: _config.server.host,
