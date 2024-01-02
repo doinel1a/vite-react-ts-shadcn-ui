@@ -1,5 +1,7 @@
 {
   "private": true,
+  "license": "MIT",
+  "type": "module",
   "author": {
     "name": "Doinel Atanasiu",
     "email": "doinel1atanasiu@gmail.com",
@@ -9,16 +11,14 @@
     "type": "git",
     "url": "https://github.com/doinel1a/vite-react-ts-shadcn-ui"
   },
-  "type": "module",
-  "license": "MIT",
   "scripts": {
-    "postinstall": "npx husky install && npx playwright install",
-    "lint": "npx eslint --ext ts --ext tsx ./src",
-    "lint:fix": "npx eslint --ext ts --ext tsx ./src --fix",
+    "postinstall": "husky install && playwright install",
+    "lint": "eslint --ext ts --ext tsx ./src",
+    "lint:fix": "eslint --ext ts --ext tsx ./src --fix",
     "prettier": "prettier --write **/**/*.{html,css,scss,js,cjs,mjs,ts,tsx}",
     "dev": "vite",
-    "test": "npx playwright test",
-    "test:ui": "npx playwright test --ui",
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },

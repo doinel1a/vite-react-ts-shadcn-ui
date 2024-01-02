@@ -20,9 +20,8 @@
 
 # Vite React TypeScript & Shadcn/ui — Template
 
-Are you looking for a way to supercharge your development experience and build stunning web applications with ease?
-This development starter template is the ultimate solution to help you getting started on your project in no time, without the hassle of setting up and configuring your development environment from scratch each time you start working.s
-This template is ideal for front-end developers who want to build modern, fast and reliable web applications with the latest cutting edge technologies such as **React.js**, **TypeScript**, **Shadcn/ui**, **TailwindCSS**, **ESLint**, **Prettier**, **Husky**, **Vite** and much more!
+This development starter template is the ultimate solution to help you getting started on your project in no time, without the hassle of setting up and configuring your development environment from scratch each time you start working.
+This repository is ideal for front-end developers who want to build modern, fast and reliable web applications with the latest cutting edge technologies such as **React.js**, **TypeScript**, **Shadcn/ui**, **TailwindCSS**, **ESLint**, **Prettier**, **Husky**, **Vite** and much more!
 
 ---
 
@@ -60,7 +59,7 @@ This template is ideal for front-end developers who want to build modern, fast a
     ```
 - Open your terminal or code editor to the path your project is located, and run:
 
-  |                                                  | **NPM**           | **PNPM**       | **Yarn**       |
+  |                                                  | **npm**           | **pnpm**       | **yarn**       |
   | ------------------------------------------------ | ----------------- | -------------- | -------------- |
   | To **install** the dependencies                  | `npm install`     | `pnpm install` | `yarn install` |
   | To **run** the **development server**            | `npm run dev`     | `pnpm dev`     | `yarn dev`     |
@@ -79,17 +78,14 @@ This repository comes 🔋 packed with:
 - **TypeScript**;
 - **Shadcn/ui**;
 - **TailwindCSS**;
-- **SASS**;
-- **PostCSS**;
-
-And with tools that enhance the development experience:
-
+- **SASS** & **SCSS**;
 - **ESLint**;
 - **Prettier**;
 - **Husky**;
 - **Commitlint**;
 - **Lint staged**;
 - **Playwright**;
+- **Vite**;
 
 [Back to :arrow_up:](#vite-react-typescript--shadcnui--template "Back to 'Table of contents' section")
 
