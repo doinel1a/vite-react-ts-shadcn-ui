@@ -1,10 +1,5 @@
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
-  env: {
-    node: true,
-    es2021: true,
-    browser: true
-  },
   plugins: ['@typescript-eslint'],
   extends: [
     'plugin:react/recommended',
@@ -31,6 +26,13 @@ module.exports = {
   },
   ignorePatterns: ['**/*.html'],
   rules: {
+    // base
+    indent: ['error', 2, { SwitchCase: 1 }],
+    'linebreak-style': ['error', 'windows'],
+    quotes: ['error', 'single'],
+    semi: ['error', 'always'],
+    // end
+
     // typescript
     '@typescript-eslint/array-type': 'off',
     '@typescript-eslint/consistent-type-definitions': 'off',
