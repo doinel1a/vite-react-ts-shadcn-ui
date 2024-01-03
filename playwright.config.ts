@@ -1,6 +1,6 @@
 import { defineConfig, devices } from '@playwright/test';
 
-import _config from './_config';
+import config from './_config';
 
 /**
  * Read environment variables from file.
@@ -87,6 +87,6 @@ export default defineConfig({
   /* Run your local dev server before starting the tests */
   webServer: {
     command: 'npm run dev',
-    port: _config.server.port
+    port: config.server.port
   }
 });
