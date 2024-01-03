@@ -2,7 +2,7 @@ import type { Locator } from '@playwright/test';
 
 import { expect, test } from '@playwright/test';
 
-import _config from '../_config';
+import config from '../_config';
 
 test.describe('Test theme toggle', () => {
   let isDarkMode = false;
@@ -10,7 +10,7 @@ test.describe('Test theme toggle', () => {
   let themeDropdownContent: Locator;
 
   test.beforeEach(async ({ page }) => {
-    await page.goto(`http://${_config.server.host}:${_config.server.port}`);
+    await page.goto(`http://${config.server.host}:${config.server.port}`);
 
     html = page.locator('html');
     isDarkMode = (await html.getAttribute('class')) === 'dark' ? true : false;

@@ -1,9 +1,9 @@
 import { expect, test } from '@playwright/test';
 
-import _config from '../_config';
+import config from '../_config';
 
 test('Test browsers', async ({ page }) => {
-  await page.goto(`http://${_config.server.host}:${_config.server.port}`);
+  await page.goto(`http://${config.server.host}:${config.server.port}`);
 
-  await expect(page).toHaveTitle(_config.metadata.title);
+  await expect(page).toHaveTitle(config.metadata.title);
 });

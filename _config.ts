@@ -1,4 +1,4 @@
-export default {
+const config = {
   metadata: {
     title: 'Vite React.js TypeScript & Shadcn/ui — Template',
     description:
@@ -7,7 +7,9 @@ export default {
       'typescript, ts, react-typescript, react-ts, react, template, boilerplate, vite, swc, babel, tailwind, tailwindcss, sass, scss, css, github, shadcn/ui, shadcn'
   },
   server: {
-    host: '127.0.0.1',
-    port: 5137
+    host: 'localhost',
+    port: 3000
   }
 };
+
+export default config;
