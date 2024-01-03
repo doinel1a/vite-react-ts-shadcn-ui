@@ -13,10 +13,6 @@
 /dist
 /dist-ssr
 
-# various
-/playwright-report
-TODO.md
-
 # misc
 .DS_Store
 *.pem
