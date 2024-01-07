@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 
 import { Button } from './ui/button';
-import { Card, CardContent, CardFooter, CardHeader } from './ui/card';
+import { Card, CardContent, CardHeader } from './ui/card';
 
 export default function Counter() {
   const [count, setCount] = useState(0);
 
   return (
-    <Card className='border border-border bg-secondary shadow-md'>
+    <Card className='w-72 border border-border bg-secondary shadow-md'>
       <CardHeader>
         <h1 className='text-2xl'>Vite React TypeScript</h1>
         <h2 className='text-lg'>with shadcn/ui</h2>
