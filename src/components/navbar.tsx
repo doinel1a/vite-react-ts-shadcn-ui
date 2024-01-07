@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ThemeToggle } from './ui/theme/toggle';
+import ThemeToggle from './ui/theme/toggle';
 
 export default function Navbar() {
   return (
