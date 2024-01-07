@@ -1,6 +1,7 @@
 import { type Config } from 'tailwindcss';
 
 export default {
+  prefix: '',
   darkMode: ['class'],
   content: [
     './pages/**/*.{ts,tsx}',
@@ -8,7 +9,6 @@ export default {
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}'
   ],
-  prefix: '',
   theme: {
     container: {
       center: true,
