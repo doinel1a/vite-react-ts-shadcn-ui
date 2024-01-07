@@ -14,7 +14,7 @@ import {
 
 import { useTheme } from './provider';
 
-export function ThemeToggle() {
+export default function ThemeToggle() {
   const { setTheme } = useTheme();
 
   return (
