@@ -6,7 +6,7 @@ import Counter from './components/counter';
 import Footer from './components/footer';
 import GithubCorner from './components/github-corner';
 import Navbar from './components/navbar';
-import { ThemeProvider } from './components/ui/theme/provider';
+import ThemeProvider from './components/ui/theme/provider';
 import EStorageKeys from './constants/keys';
 
 function App() {
