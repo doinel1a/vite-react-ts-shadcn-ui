@@ -1,5 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 
+import EStorageKeys from '../constants/keys';
+
 type Theme = 'dark' | 'light' | 'system';
 
 type ThemeProviderProperties = {
@@ -24,7 +26,7 @@ const ThemeProviderContext = createContext<ThemeProviderState>(initialState);
 export default function ThemeProvider({
   children,
   defaultTheme = 'system',
-  storageKey = 'vite-ui-theme',
+  storageKey = EStorageKeys.theme,
   ...properties
 }: ThemeProviderProperties) {
   const [theme, setTheme] = useState<Theme>(

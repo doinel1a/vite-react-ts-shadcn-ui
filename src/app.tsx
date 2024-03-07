@@ -6,13 +6,12 @@ import Counter from './components/counter';
 import Footer from './components/footer';
 import GithubCorner from './components/github-corner';
 import Navbar from './components/navbar';
-import ThemeProvider from './components/ui/theme/provider';
-import EStorageKeys from './constants/keys';
+import RootProvider from './providers/root';
 
 function App() {
   return (
     <BrowserRouter>
-      <ThemeProvider defaultTheme='system' storageKey={EStorageKeys.theme}>
+      <RootProvider>
         <Navbar />
 
         <main className='flex h-full flex-col items-center justify-center'>
@@ -24,7 +23,7 @@ function App() {
         </main>
 
         <Footer />
-      </ThemeProvider>
+      </RootProvider>
     </BrowserRouter>
   );
 }
