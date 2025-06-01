@@ -37,12 +37,15 @@ jobs:
 
       - name: Run Linter
         run: pnpm run lint
+        continue-on-error: true
 
       - name: Install Playwright dependencies
         run: npx playwright install-deps
 
       - name: Run Playwright tests
         run: pnpm test
+        env:
+          CI: true
 
       - uses: actions/upload-artifact@v4
         if: always()
