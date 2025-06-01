@@ -70,12 +70,12 @@ This repository is ideal for front-end developers who want to build modern, fast
     git clone https://github.com/doinel1a/vite-react-ts-shadcn-ui YOUR-PROJECT-NAME
     ```
 - Open your terminal or code editor to the path your project is located, and run:
-  - To **install** the dependencies: `pnpm install`
-  - To **run** the **development server**: `pnpm dev`
-  - To **build** your app **for production**: `pnpm build`
-  - To **build** your app **for qa**: `pnpm build:qa`
-  - To **build** your app **for staging**: `pnpm build:staging`
-  - To **preview** your **production optimized app**: `pnpm preview`
+  - To **install** the dependencies: `pnpm install`;
+  - To **run** the **development server**: `pnpm dev`;
+  - To **build** your app **for production**: `pnpm build`;
+  - To **build** your app **for qa**: `pnpm build:qa`;
+  - To **build** your app **for staging**: `pnpm build:staging`;
+  - To **preview** your **production optimized app**: `pnpm preview`;
 
 - Commit your changes and push them to your repository: by using `pnpm commit` or `npx cz`. This will call **[Commitizen][commitlint]** to help you write a conventional commit message.  
   If you want to skip the commit message, you can use `git commit -m "your commit message"`.
