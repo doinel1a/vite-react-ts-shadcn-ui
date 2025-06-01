@@ -4,13 +4,16 @@
   "license": "MIT",
   "type": "module",
   "author": {
-    "name": "Doinel Atanasiu",
-    "email": "doinel1atanasiu@gmail.com",
-    "url": "https://business-link.d1a.app"
+    "name": "Antonin Marxer",
+    "email": "marxer.antonin@gmail.com",
+    "url": "https://antoninmarxer.com"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/doinel1a/vite-react-ts-shadcn-ui"
+    "url": "https://github.com/PheonBest/vite-react-ts-shadcn-ui-ci-cd-devbox"
+  },
+  "issues": {
+    "url": "https://github.com/PheonBest/vite-react-ts-shadcn-ui-ci-cd-devbox/issues"
   },
   "scripts": {
     "prepare": "husky",
