@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-return */
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'vite';
@@ -6,6 +9,7 @@ import config from './_config';
 import { TanStackRouterVite } from '@tanstack/router-plugin/vite';
 import svgr from 'vite-plugin-svgr';
 import tailwindcss from '@tailwindcss/vite';
+import legacy from '@vitejs/plugin-legacy';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -16,6 +20,7 @@ export default defineConfig({
     react(),
     tailwindcss(),
     svgr(),
+    legacy(),
     {
       name: 'dynamic-html',
       transformIndexHtml(html) {

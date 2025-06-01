@@ -44,10 +44,8 @@ This repository is ideal for front-end developers who want to build modern, fast
 
 ### Prerequisites:
 
-- JavaScript runtime **[node.js][node]**;
-- **(OPTIONAL)** Alternative package manager:
-  - **[pnpm][pnpm]** <br /> or
-  - **[yarn][yarn]**
+- JavaScript runtime **[node.js][node]**
+- Package manager **[pnpm][pnpm]**
 
 ### Start developing:
 
@@ -58,13 +56,12 @@ This repository is ideal for front-end developers who want to build modern, fast
     git clone https://github.com/doinel1a/vite-react-ts-shadcn-ui YOUR-PROJECT-NAME
     ```
 - Open your terminal or code editor to the path your project is located, and run:
-
-  |                                                  | **npm**           | **pnpm**       | **yarn**       |
-  | ------------------------------------------------ | ----------------- | -------------- | -------------- |
-  | To **install** the dependencies                  | `npm install`     | `pnpm install` | `yarn install` |
-  | To **run** the **development server**            | `npm run dev`     | `pnpm dev`     | `yarn dev`     |
-  | To **build** your app **for production**         | `npm run build`   | `pnpm build`   | `yarn build`   |
-  | To **preview** your **production optimized app** | `npm run preview` | `pnpm preview` | `yarn preview` |
+  To **install** the dependencies: `pnpm install`
+  To **run** the **development server**: `pnpm dev`
+  To **build** your app **for production**: `pnpm build`
+  To **build** your app **for qa**: `pnpm build:qa`
+  To **build** your app **for staging**: `pnpm build:staging`
+  To **preview** your **production optimized app**: `pnpm preview`
 
 [Back to :arrow_up:](#vite-react-typescript--shadcnui--template "Back to 'Table of contents' section")
 
@@ -82,7 +79,7 @@ This repository comes 🔋 packed with:
 - **ESLint**;
 - **Prettier**;
 - **Husky**;
-- **Commitlint**;
+- **Commitlint** & **Commitizen**;
 - **Lint staged**;
 - **Playwright**;
 - **Vite**;

@@ -38,7 +38,6 @@ const useConfiguration = () => {
       } catch (error) {
         console.error('Failed to fetch API version:', error);
       }
-      console.log('Configuration loaded:', baseConfig);
       setConfig(baseConfig);
       setLoading(false);
     };

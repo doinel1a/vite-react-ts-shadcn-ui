@@ -68,20 +68,19 @@ export const useScrollPosition = (
   boundingElement?: ElementReference
 ): void => {
   const position = useRef(getScrollPosition({ useWindow, boundingElement }));
-
-  let throttleTimeout: NodeJS.Timeout | undefined = undefined;
+  const throttleTimeoutReference = useRef<NodeJS.Timeout | undefined>(undefined);
 
   const callBack = () => {
     const currentPos = getScrollPosition({ element, useWindow, boundingElement });
     effect({ prevPos: position.current, currPos: currentPos });
     position.current = currentPos;
-    throttleTimeout = undefined;
+    throttleTimeoutReference.current = undefined;
   };
 
   useEffect(() => {
     const handleScroll = () => {
       if (wait) {
-        throttleTimeout ??= globalThis.setTimeout(callBack, wait);
+        throttleTimeoutReference.current ??= globalThis.setTimeout(callBack, wait);
       } else {
         callBack();
       }
@@ -102,8 +101,8 @@ export const useScrollPosition = (
         window.removeEventListener('scroll', handleScroll);
       }
 
-      if (throttleTimeout) {
-        clearTimeout(throttleTimeout);
+      if (throttleTimeoutReference.current) {
+        clearTimeout(throttleTimeoutReference.current);
       }
     };
   }, deps);
@@ -113,6 +112,6 @@ useScrollPosition.defaultProps = {
   deps: [],
   element: false,
   useWindow: false,
-  wait: null,
+  wait: undefined,
   boundingElement: false
 };

@@ -43,6 +43,13 @@
     "node": ">=v18",
     "pnpm": ">=8.0.0"
   },
+  "browserslist": [
+    "last 3 versions",
+    "> 0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
     "@fortawesome/free-brands-svg-icons": "^6.7.2",
@@ -51,7 +58,6 @@
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@radix-ui/react-dropdown-menu": "^2.1.15",
     "@radix-ui/react-slot": "^1.2.3",
-    "@tailwindcss/vite": "^4.1.8",
     "@tanstack/react-router": "^1.120.13",
     "@tanstack/react-router-devtools": "^1.120.13",
     "class-variance-authority": "^0.7.1",
@@ -64,7 +70,6 @@
     "react-router-dom": "^7.6.1",
     "tailwind-merge": "^3.3.0",
     "tailwindcss-animate": "^1.0.7",
-    "vite-plugin-svgr": "^4.3.0",
     "zustand": "^5.0.5"
   },
   "devDependencies": {
@@ -79,6 +84,7 @@
     "@ianvs/prettier-plugin-sort-imports": "^4.4.2",
     "@playwright/test": "^1.52.0",
     "@tailwindcss/nesting": "0.0.0-insiders.565cd3e",
+    "@tailwindcss/vite": "^4.1.8",
     "@tanstack/router-plugin": "^1.120.13",
     "@tanstack/router-vite-plugin": "^1.120.13",
     "@total-typescript/ts-reset": "^0.6.1",
@@ -89,6 +95,7 @@
     "@types/react-router-dom": "^5.3.3",
     "@typescript-eslint/eslint-plugin": "^8.33.0",
     "@typescript-eslint/parser": "^8.33.0",
+    "@vitejs/plugin-legacy": "^6.1.1",
     "@vitejs/plugin-react-swc": "^3.10.0",
     "autoprefixer": "^10.4.21",
     "commitizen": "^4.3.1",
@@ -102,7 +109,7 @@
     "eslint-plugin-sonarjs": "^0.25.1",
     "eslint-plugin-unicorn": "^56.0.1",
     "husky": "^9.1.7",
-    "inquirer": "9",
+    "inquirer": "^9.3.7",
     "lint-staged": "^15.5.2",
     "plugin": "link:@tanstack/router-vite/plugin",
     "postcss": "^8.5.4",
@@ -110,8 +117,10 @@
     "prettier-plugin-tailwindcss": "^0.6.12",
     "sass": "^1.89.1",
     "tailwindcss": "^4.1.8",
+    "terser": "^5.40.0",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.33.0",
-    "vite": "link:@tanstack/router-plugin/vite"
+    "vite": "link:@tanstack/router-plugin/vite",
+    "vite-plugin-svgr": "^4.3.0"
   }
 }

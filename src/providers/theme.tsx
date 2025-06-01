@@ -43,11 +43,11 @@ export default function ThemeProvider({
       const systemTheme = globalThis.matchMedia('(prefers-color-scheme: dark)').matches
         ? 'dark'
         : 'light';
-
+      console.log(`Setting system theme: ${systemTheme}`);
       root.classList.add(systemTheme);
       return;
     }
-
+    console.log(`Setting theme: ${theme}`);
     root.classList.add(theme);
   }, [theme]);
 

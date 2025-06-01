@@ -3,6 +3,7 @@
     "strict": true,
     "composite": true,
     "module": "ESNext",
+    "lib": ["ES2021.String"],
     "moduleResolution": "Bundler",
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true
