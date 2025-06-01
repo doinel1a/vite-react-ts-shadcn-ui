@@ -17,6 +17,9 @@
 [edge-icon]: https://github.com/alrra/browser-logos/blob/main/src/edge/edge_64x64.png
 [opera-icon]: https://github.com/alrra/browser-logos/blob/main/src/opera/opera_64x64.png
 [safari-icon]: https://github.com/alrra/browser-logos/blob/main/src/safari/safari_64x64.png
+[devbox-introd]: https://www.jetify.com/docs/devbox/
+[devbox-install]: https://www.jetify.com/docs/devbox/installing_devbox/
+[nixhub]: https://www.nixhub.io/
 
 # Vite React TypeScript & Shadcn/ui — Template
 
@@ -46,6 +49,17 @@ This repository is ideal for front-end developers who want to build modern, fast
 
 - JavaScript runtime **[node.js][node]**
 - Package manager **[pnpm][pnpm]**
+- Alternatively, you can use **[devbox][devbox]**, which is a native package manager that allows you to install and manage your development environment in a reproducible way. For example, you can use it to install `rabbitmq`, `redis`, `postgres` or `mariadb`.
+  
+  **When more dependencies are required, using Devbox is strongly recommended.** 
+
+  To install Devbox, follow the instructions on the [official documentation][devbox-install].
+  To install the dependencies and start a shell with the project environment, run the following commands in your terminal:
+  ```bash
+  devbox install
+  devbox shell
+  ```
+  You can search for available packages on the [NixHub][nixhub] website.
 
 ### Start developing:
 
@@ -56,13 +70,15 @@ This repository is ideal for front-end developers who want to build modern, fast
     git clone https://github.com/doinel1a/vite-react-ts-shadcn-ui YOUR-PROJECT-NAME
     ```
 - Open your terminal or code editor to the path your project is located, and run:
-  To **install** the dependencies: `pnpm install`
-  To **run** the **development server**: `pnpm dev`
-  To **build** your app **for production**: `pnpm build`
-  To **build** your app **for qa**: `pnpm build:qa`
-  To **build** your app **for staging**: `pnpm build:staging`
-  To **preview** your **production optimized app**: `pnpm preview`
+  - To **install** the dependencies: `pnpm install`
+  - To **run** the **development server**: `pnpm dev`
+  - To **build** your app **for production**: `pnpm build`
+  - To **build** your app **for qa**: `pnpm build:qa`
+  - To **build** your app **for staging**: `pnpm build:staging`
+  - To **preview** your **production optimized app**: `pnpm preview`
 
+- Commit your changes and push them to your repository: by using `pnpm commit` or `npx cz`. This will call **[Commitizen][commitlint]** to help you write a conventional commit message.  
+  If you want to skip the commit message, you can use `git commit -m "your commit message"`.
 [Back to :arrow_up:](#vite-react-typescript--shadcnui--template "Back to 'Table of contents' section")
 
 ---
@@ -110,28 +126,18 @@ Update the configuration [here][browserslist] and check in real-time the **globa
 
 ---
 
+## Update dependencies
+To update the dependencies of your project, you can use the following commands:
+- To update all dependencies to their latest versions: `pnpm up`
+- To update a specific dependency to its latest version: `pnpm up <dependency-name>`
+@tanstack/router-plugin-vite has an incorrect vite plugin version, which forces it to be uninstalled. Reinstall it by running: `pnpm i -D @vitejs/plugin-legacy`
+---
+
 ## :busts_in_silhouette: Contribute
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create.  
 Any contribution is greatly appreciated: big or small, it can be documentation updates, adding new features or something bigger.  
 Please check the [**contributing guide**][code-of-conduct] for details on how to help out and keep in mind that all commits must follow the **[conventional commit format][commitlint]**.
-
-### How to contribute:
-
-1.  **[Get started](#computer-getting-started "Go to 'Getting started' section");**
-2.  **For a new feature:**
-    1.  Create a new branch: `git checkout -b feat/NEW-FEATURE`;
-    2.  Add your changes to the staging area: `git add PATH/TO/FILENAME.EXTENSION`;
-    3.  Commit your changes: `git commit -m "feat: NEW FEATURE"`;
-    4.  Push your new branch: `git push origin feat/NEW-FEATURE`;
-3.  **For a bug fix:**
-    1.  Create a new branch: `git checkout -b fix/BUG-FIX`;
-    2.  Add your changes to the staging area: `git add PATH/TO/FILENAME.EXTENSION`;
-    3.  Commit your changes: `git commit -m "fix: BUG FIX"`;
-    4.  Push your new branch: `git push origin fix/BUG-FIX`;
-4.  **Open a new [pull request][pulls];**
-
-[Back to :arrow_up:](#vite-react-typescript--shadcnui--template "Back to 'Table of contents' section")
 
 ---
 
@@ -148,7 +154,7 @@ See the [LICENSE][license] file for more informations.
 ## :gem: Acknowledgements
 
 Special thanks to:
-
+- [doinel1a](https://github.com/doinel1a/vite-react-ts-shadcn-ui) for the [origin template](https://github.com/doinel1a/vite-react-ts-shadcn-ui) ;
 - [alrra](https://github.com/alrra) for [browser-logos](https://github.com/alrra/browser-logos);
 - [tandpfun](https://github.com/tandpfun) for [skill-icons](https://github.com/tandpfun/skill-icons);
 
