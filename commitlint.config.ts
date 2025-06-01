@@ -22,7 +22,9 @@ const Configuration: UserConfig = {
         'other'
       ]
     ]
-  }
+  },
+  ignores: [(commit) => commit.includes('WIP')], // Ignore commits with 'WIP' in the message
+  helpUrl: 'https://github.com/conventional-changelog/commitlint/#what-is-commitlint'
   // ...
 };
 

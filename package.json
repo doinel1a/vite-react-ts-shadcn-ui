@@ -27,7 +27,12 @@
     "build": "vite build",
     "build:qa": "vite build --mode qa",
     "build:staging": "vite build --mode staging",
-    "commitlint": "commitlint --edit"
+    "commit": "git-cz"
+  },
+  "config": {
+    "commitizen": {
+      "path": "@commitlint/cz-commitlint"
+    }
   },
   "lint-staged": {
     "ignorePattern": "node_modules/**",
@@ -66,6 +71,7 @@
     "@builder.io/partytown": "^0.10.3",
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
+    "@commitlint/cz-commitlint": "^19.8.1",
     "@commitlint/prompt-cli": "^19.8.1",
     "@commitlint/types": "^19.8.1",
     "@eslint-react/eslint-plugin": "^1.50.0",
@@ -85,6 +91,7 @@
     "@typescript-eslint/parser": "^8.33.0",
     "@vitejs/plugin-react-swc": "^3.10.0",
     "autoprefixer": "^10.4.21",
+    "commitizen": "^4.3.1",
     "cssnano": "^7.0.7",
     "eslint": "^8.57.1",
     "eslint-config-prettier": "^10.1.5",
@@ -95,6 +102,7 @@
     "eslint-plugin-sonarjs": "^0.25.1",
     "eslint-plugin-unicorn": "^56.0.1",
     "husky": "^9.1.7",
+    "inquirer": "9",
     "lint-staged": "^15.5.2",
     "plugin": "link:@tanstack/router-vite/plugin",
     "postcss": "^8.5.4",
