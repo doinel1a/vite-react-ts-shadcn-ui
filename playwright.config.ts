@@ -12,7 +12,8 @@ import config from './_config';
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-  testDir: 'tests',
+  testDir: 'tests/e2e',
+  testIgnore: '**/*.unit.test.ts',
   /* Maximum time one test can run for. */
   timeout: 30 * 1000,
   expect: {
@@ -88,6 +89,6 @@ export default defineConfig({
   webServer: {
     command: 'npm run dev',
     port: config.server.port,
-    reuseExistingServer: !process.env.CI,
+    reuseExistingServer: !process.env.CI
   }
 });

@@ -2,7 +2,7 @@ import type { Locator } from '@playwright/test';
 
 import { expect, test } from '@playwright/test';
 
-import config from '../_config';
+import config from '../../_config';
 
 test.describe('Test theme toggle', () => {
   let isDarkMode = false;
