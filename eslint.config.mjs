@@ -7,6 +7,7 @@ import reactHooks from 'eslint-plugin-react-hooks';
 import sonarjs from 'eslint-plugin-sonarjs';
 import unicorn from 'eslint-plugin-unicorn';
 import tseslint from 'typescript-eslint';
+import vitest from "@vitest/eslint-plugin";
 
 export default [
   // Base + TS rules
@@ -29,6 +30,19 @@ export default [
 
   // Plugin-based configs
   eslintReact.configs.recommended,
+  
+  // Vitest rules
+  {
+    files: ["tests/**"], // or any other pattern
+    plugins: {
+      vitest
+    },
+    rules: {
+      ...vitest.configs.recommended.rules, // you can also use vitest.configs.all.rules to enable all rules
+      "vitest/max-nested-describe": ["error", { "max": 3 }] // you can also modify rules' behavior using option like this
+    },
+
+  },
 
   {
     // Apply remaining plugin rules + custom rules
@@ -36,7 +50,8 @@ export default [
       'react-hooks': reactHooks,
       'jsx-a11y': jsxA11y,
       sonarjs: sonarjs,
-      unicorn: unicorn
+      unicorn: unicorn,
+      vitest: vitest
     },
     rules: {
       // Plugin recommended rules
@@ -77,7 +92,8 @@ export default [
     languageOptions: {
       globals: {
         window: 'readonly',
-        document: 'readonly'
+        document: 'readonly',
+        vitest: true
       }
     },
     ignores: ['**/*.html', '**/routeTree.gen.ts']

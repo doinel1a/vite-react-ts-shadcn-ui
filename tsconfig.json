@@ -19,11 +19,13 @@
     "paths": {
       "@/*": ["./src/*"]
     },
-    "typeRoots": ["./node_modules/@types", "./src/types"]
+    "typeRoots": ["./node_modules/@types", "./src/types"],
   },
   "include": [
-    "__tests__",
+    "tests",
     "src",
+    "**/*.test.ts",
+    "**/*.test.tsx",
     "**/*.tsx",
     "**/*.cjs",
     "**/*.mjs",
@@ -31,7 +33,8 @@
     "vite.config.ts",
     "playwright.config.ts",
     "commitlint.config.ts",
-    "prettier.config.js"
+    "prettier.config.js",
+    "vitest.config.ts",
   ],
   "exclude": ["node_modules"],
   "references": [{ "path": "./tsconfig.node.json" }]

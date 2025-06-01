@@ -15,14 +15,15 @@
   "scripts": {
     "prepare": "husky",
     "postinstall": "husky & playwright install",
-    "dev": "vite --port 30042",
+    "dev": "vite",
     "preview": "vite preview",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "lint:staged": "lint-staged",
     "format": "prettier . --check",
     "format:fix": "prettier . --write",
-    "test": "playwright test",
+    "test": "vitest && playwright test",
+    "test:watch": "vitest --watch",
     "test:ui": "playwright test --ui",
     "build": "vite build",
     "build:qa": "vite build --mode qa",
@@ -86,6 +87,9 @@
     "@tailwindcss/vite": "^4.1.8",
     "@tanstack/router-plugin": "^1.120.13",
     "@tanstack/router-vite-plugin": "^1.120.13",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
     "@total-typescript/ts-reset": "^0.6.1",
     "@types/eslint-plugin-jsx-a11y": "^6.10.0",
     "@types/node": "^22.15.29",
@@ -96,6 +100,7 @@
     "@typescript-eslint/parser": "^8.33.0",
     "@vitejs/plugin-legacy": "^6.1.1",
     "@vitejs/plugin-react-swc": "^3.10.0",
+    "@vitest/eslint-plugin": "^1.2.1",
     "autoprefixer": "^10.4.21",
     "commitizen": "^4.3.1",
     "cssnano": "^7.0.7",
@@ -109,7 +114,9 @@
     "eslint-plugin-unicorn": "^56.0.1",
     "husky": "^9.1.7",
     "inquirer": "^9.3.7",
+    "jsdom": "^26.1.0",
     "lint-staged": "^15.5.2",
+    "msw": "^2.8.7",
     "plugin": "link:@tanstack/router-vite/plugin",
     "postcss": "^8.5.4",
     "prettier": "^3.5.3",
@@ -120,6 +127,12 @@
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.33.0",
     "vite": "link:@tanstack/router-plugin/vite",
-    "vite-plugin-svgr": "^4.3.0"
+    "vite-plugin-svgr": "^4.3.0",
+    "vitest": "^3.1.4"
+  },
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
   }
 }

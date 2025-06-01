@@ -1,8 +1,8 @@
 /// <reference types="vite/client" />
 /// <reference types="vite/types/importMeta.d.ts" />
 /// <reference types="vite-plugin-svgr/client" />
-
 /// <reference types="vite/client" />
+/// <reference types="vitest" />
 
 interface ViteTypeOptions {
   // By adding this line, you can make the type of ImportMetaEnv strict

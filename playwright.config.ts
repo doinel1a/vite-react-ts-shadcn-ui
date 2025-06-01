@@ -12,7 +12,7 @@ import config from './_config';
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-  testDir: '__tests__',
+  testDir: 'tests',
   /* Maximum time one test can run for. */
   timeout: 30 * 1000,
   expect: {
@@ -82,11 +82,12 @@ export default defineConfig({
   ],
 
   /* Folder for test artifacts such as screenshots, videos, traces, etc. */
-  outputDir: '__tests_results__',
+  outputDir: 'tests_results',
 
   /* Run your local dev server before starting the tests */
   webServer: {
     command: 'npm run dev',
-    port: config.server.port
+    port: config.server.port,
+    reuseExistingServer: !process.env.CI,
   }
 });
