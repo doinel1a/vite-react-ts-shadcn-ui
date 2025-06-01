@@ -3,14 +3,14 @@
     "target": "ESNext",
     "useDefineForClassFields": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "allowJs": false,
+    "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": false,
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "module": "ESNext",
-    "moduleResolution": "Node",
+    "moduleResolution": "Bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
@@ -18,9 +18,19 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "typeRoots": ["./node_modules/@types", "./src/types"]
   },
-  "include": ["src", ".eslintrc.cjs", "**/*.tsx", "**/*.cjs", "**/*.js"],
+  "include": [
+    "src",
+    "**/*.tsx",
+    "**/*.cjs",
+    "**/*.mjs",
+    "tailwind.config.ts",
+    "vite.config.ts",
+    "playwright.config.ts",
+    "commitlint.config.ts"
+  ],
   "exclude": ["node_modules"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

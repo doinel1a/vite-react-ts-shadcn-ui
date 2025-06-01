@@ -1,13 +1,14 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, use, useEffect, useState } from 'react';
 
 import EStorageKeys from '../constants/keys';
 
 type Theme = 'dark' | 'light' | 'system';
 
 type ThemeProviderProperties = {
-  children: React.ReactNode;
-  defaultTheme?: Theme;
-  storageKey?: string;
+  readonly children: React.ReactNode;
+  readonly defaultTheme?: Theme;
+  readonly storageKey?: EStorageKeys.theme;
+  readonly y?: string;
 };
 
 type ThemeProviderState = {
@@ -34,12 +35,12 @@ export default function ThemeProvider({
   );
 
   useEffect(() => {
-    const root = window.document.documentElement;
+    const root = globalThis.document.documentElement;
 
     root.classList.remove('light', 'dark');
 
     if (theme === 'system') {
-      const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches
+      const systemTheme = globalThis.matchMedia('(prefers-color-scheme: dark)').matches
         ? 'dark'
         : 'light';
 
@@ -50,23 +51,27 @@ export default function ThemeProvider({
     root.classList.add(theme);
   }, [theme]);
 
-  const value = {
-    theme,
-    setTheme: (theme: Theme) => {
-      localStorage.setItem(storageKey, theme);
-      setTheme(theme);
-    }
-  };
+  const value = React.useMemo(
+    () => ({
+      theme,
+      setTheme: (theme: Theme) => {
+        console.log(`Setting theme to: ${theme}`);
+        localStorage.setItem(storageKey, theme);
+        setTheme(theme);
+      }
+    }),
+    [theme, setTheme, storageKey]
+  );
 
   return (
-    <ThemeProviderContext.Provider {...properties} value={value}>
+    <ThemeProviderContext {...properties} value={value}>
       {children}
-    </ThemeProviderContext.Provider>
+    </ThemeProviderContext>
   );
 }
 
 export const useTheme = () => {
-  const context = useContext(ThemeProviderContext);
+  const context = use(ThemeProviderContext);
 
   if (context === undefined) throw new Error('useTheme must be used within a ThemeProvider');
 

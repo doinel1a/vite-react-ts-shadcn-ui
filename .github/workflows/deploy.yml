@@ -1,0 +1,104 @@
+name: Build, Deploy to GitHub Pages and Notify Slack
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Select the environment to deploy to'
+        required: true
+        default: 'qa'
+        type: choice
+        options:
+          - qa
+          - staging
+          - production
+
+jobs:
+  build:
+    name: Lint, Test & Build
+    runs-on: ubuntu-latest
+    outputs:
+      app_version: ${{ steps.get_version.outputs.app_version }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # specify a version if needed
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4.1.0
+        with:
+          version: latest
+          run_install: true
+
+      - name: Run Linter
+        run: pnpm run lint
+
+      - name: Install Playwright dependencies
+        run: npx playwright install-deps
+
+      - name: Run Playwright tests
+        run: pnpm test
+
+      - uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30
+
+      - name: Get App version
+        id: get_version
+        run: |
+          APP_VERSION=$(node -p "require('./package.json').version")
+          echo "app_version=$APP_VERSION" >> $GITHUB_OUTPUT
+          echo "App Version: $APP_VERSION"
+
+      - name: Build project
+        run: npm run build:${{ github.event.inputs.environment }}
+
+      - name: Upload production-ready build files
+        uses: actions/upload-artifact@v4
+        with:
+          name: production-files
+          path: ./dist
+
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: production-files
+          path: ./dist
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+
+  slack:
+    name: Slack
+    needs: deploy
+    runs-on: ubuntu-latest
+    if: always()
+    steps:
+      - uses: technote-space/workflow-conclusion-action@v3
+
+      - uses: 8398a7/action-slack@v3
+        with:
+          status: failure
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        if: env.WORKFLOW_CONCLUSION == 'failure'
+

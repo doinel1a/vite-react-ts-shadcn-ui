@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import './tailwind.css';
 
 @layer base {
   :root {
@@ -50,48 +48,75 @@
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
-
   html,
   body {
     @apply h-full w-full;
   }
 
-  body {
-    @apply bg-background text-foreground;
-  }
-
   #root {
     @apply flex h-full w-full flex-col;
   }
+}
 
-  .github-corner:hover .octo-arm {
-    animation: octocat-wave 560ms ease-in-out;
-  }
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
 
-  @keyframes octocat-wave {
-    0%,
-    100% {
-      transform: rotate(0);
-    }
-    20%,
-    60% {
-      transform: rotate(-25deg);
-    }
-    40%,
-    80% {
-      transform: rotate(10deg);
-    }
-  }
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
 
-  @media (max-width: 500px) {
-    .github-corner:hover .octo-arm {
-      animation: none;
-    }
-    .github-corner .octo-arm {
-      animation: octocat-wave 560ms ease-in-out;
-    }
+#root,
+#__next {
+  isolation: isolate;
+}
+
+html,
+body,
+#root,
+#__next {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+}
+body {
+  line-height: 1.5;
+  overscroll-behavior-y: none;
+  -webkit-font-smoothing: antialiased;
+  background-size: cover;
+}
+
+footer {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.page-content {
+  width: 100%;
+  max-width: 100rem;
+  padding: 0 max(4rem, 5vw);
+}
+
+@media (max-width: 1200px) {
+  .page-content {
+    padding: 0 10px;
   }
 }

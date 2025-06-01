@@ -1,0 +1,46 @@
+.environment {
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-weight: semibold;
+}
+
+.environment.development {
+  background-color: #f0f0f0;
+  color: #333333;
+}
+.environment.qa {
+  background-color: #e0e0e0;
+  color: #444444;
+}
+.environment.staging {
+  background-color: #d0d0d0;
+  color: #555555;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: all 0.5s ease;
+  right: 0;
+  z-index: 40;
+
+  height: 80px;
+  background-color: transparent;
+  /* background: linear-gradient(
+    to bottom,
+    rgba(249, 250, 251, 0.7) 0%,
+    rgba(249, 250, 251, 1) 100%
+  );
+  background-size: 100% 200%; */
+  background-position: 0 0;
+
+  border-bottom: 1px solid transparent;
+}
+
+.header.semiOpaque {
+  background-color: rgba(249, 250, 251, 0.7);
+  border-bottom: 1px solid #e8e8e8;
+  backdrop-filter: blur(10px);
+  background-position: 0 -100%;
+}

@@ -1,35 +1,38 @@
 import path from 'node:path';
-
-import { partytownVite } from '@builder.io/partytown/utils';
-import react from '@vitejs/plugin-react-swc';
+import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'vite';
-
+import react from '@vitejs/plugin-react-swc';
 import config from './_config';
+import { TanStackRouterVite } from '@tanstack/router-plugin/vite';
+import svgr from 'vite-plugin-svgr';
+import tailwindcss from '@tailwindcss/vite';
 
-// https://vitejs.dev/config/
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 export default defineConfig({
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src"),
-    },
-  },
   plugins: [
+    TanStackRouterVite({ target: 'react', autoCodeSplitting: true }),
     react(),
-    partytownVite({
-      dest: path.join(__dirname, 'dist', '~partytown')
-    }),
+    tailwindcss(),
+    svgr(),
     {
       name: 'dynamic-html',
       transformIndexHtml(html) {
         return html
-          .replace(/%TITLE%/g, config.metadata.title)
-          .replace(/%DESCRIPTION%/g, config.metadata.description)
-          .replace(/%KEYWORDS%/g, config.metadata.keywords);
+          .replaceAll('%TITLE%', config.metadata.title)
+          .replaceAll('%DESCRIPTION%', config.metadata.description)
+          .replaceAll('%KEYWORDS%', config.metadata.keywords);
       }
     }
   ],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
+    },
+  },
   server: {
     host: config.server.host,
-    port: config.server.port
-  }
+    port: config.server.port,
+  },
 });

@@ -1,4 +1,7 @@
+import react from '@vitejs/plugin-react-swc';
+
 const config = {
+  plugins: [react()],
   metadata: {
     title: 'Vite React.js TypeScript & Shadcn/ui — Template',
     description:
