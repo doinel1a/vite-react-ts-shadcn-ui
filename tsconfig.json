@@ -22,6 +22,7 @@
     "typeRoots": ["./node_modules/@types", "./src/types"]
   },
   "include": [
+    "__tests__",
     "src",
     "**/*.tsx",
     "**/*.cjs",
@@ -29,7 +30,8 @@
     "tailwind.config.ts",
     "vite.config.ts",
     "playwright.config.ts",
-    "commitlint.config.ts"
+    "commitlint.config.ts",
+    "prettier.config.js"
   ],
   "exclude": ["node_modules"],
   "references": [{ "path": "./tsconfig.node.json" }]

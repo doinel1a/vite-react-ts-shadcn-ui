@@ -97,6 +97,8 @@ export const useScrollPosition = (
     return () => {
       if (boundingElement) {
         boundingElement.current?.removeEventListener('scroll', handleScroll);
+        // Reset the bounding element reference to avoid memory leaks
+        boundingElement.current = undefined;
       } else {
         window.removeEventListener('scroll', handleScroll);
       }
@@ -105,6 +107,7 @@ export const useScrollPosition = (
         clearTimeout(throttleTimeoutReference.current);
       }
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, deps);
 };
 

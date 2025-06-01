@@ -26,8 +26,8 @@ export default function Footer() {
           <div className='text-teal-600'></div>
 
           <ul className='flex h-full items-center justify-end gap-6 sm:mt-0 sm:justify-end'>
-            {marketing.map((item, index) => (
-              <li key={index}>
+            {marketing.map((item) => (
+              <li key={item.icon.displayName}>
                 <a
                   href={item.url}
                   rel='noreferrer'
