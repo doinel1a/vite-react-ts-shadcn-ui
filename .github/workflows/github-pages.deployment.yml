@@ -1,4 +1,4 @@
-name: Build, Deploy to GitHub Pages and Notify Slack
+name: Github Pages Deployment
 
 on:
   workflow_dispatch:
@@ -12,6 +12,25 @@ on:
           - qa
           - staging
           - production
+  push:
+    branches:
+      - 'main'
+      - 'staging'
+      - 'qa'
+      - 'release/*'
+      - 'feature/*'
+      - 'bugfix/*'
+  pull_request:
+    branches:
+      - 'main'
+      - 'staging'
+      - 'qa'
+      - 'release/*'
+      - 'feature/*'
+      - 'bugfix/*'
+
+env:
+  ENVIRONMENT: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.environment || (github.ref_name == 'main' && 'production' || github.ref_name == 'staging' && 'staging' || 'qa') }}
 
 jobs:
   build:
@@ -62,7 +81,7 @@ jobs:
           echo "App Version: $APP_VERSION"
 
       - name: Build project
-        run: npm run build:${{ github.event.inputs.environment }}
+        run: npm run build:${{ env.ENVIRONMENT }}
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v4
