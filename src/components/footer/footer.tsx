@@ -27,14 +27,14 @@ export default function Footer() {
 
           <ul className='flex h-full items-center justify-end gap-6 sm:mt-0 sm:justify-end'>
             {marketing.map((item) => (
-              <li key={item.icon.displayName}>
+              <li key={item.url}>
                 <a
                   href={item.url}
                   rel='noreferrer'
                   target='_blank'
-                  className='text-gray-700 transition hover:opacity-75'
+                  className='transition hover:opacity-75'
                 >
-                  <item.icon className='h-6 w-6' />
+                  <item.icon className='h-6 w-6 fill-gray-700 dark:fill-white' />
                 </a>
               </li>
             ))}
@@ -42,7 +42,7 @@ export default function Footer() {
         </div>
 
         {/* Sections */}
-        <div className='w-full border-t border-gray-100 bg-white p-0 px-4 pt-4 sm:px-6 lg:px-8 lg:pt-8'>
+        <div className='w-full border-t border-gray-100 p-0 px-4 pt-4 sm:px-6 lg:px-8 lg:pt-8 dark:border-gray-900'>
           <div className='mx-auto'>
             {/* Grid */}
             <div className='mx-0 flex flex-wrap justify-center gap-8 sm:mx-10 sm:flex-nowrap sm:justify-between sm:gap-4'>
@@ -50,13 +50,15 @@ export default function Footer() {
                 {sections.map((section) => {
                   return (
                     <div key={section.label} className='text-center sm:text-left'>
-                      <p className='mb-2 text-lg font-semibold text-gray-900'>{section.label}</p>
+                      <p className='mb-2 text-lg font-semibold text-gray-900 dark:text-white'>
+                        {section.label}
+                      </p>
                       <ul className='space-y-4 text-sm'>
                         {section.items.map((item) => {
                           return (
                             <li key={item.label}>
                               <a
-                                className='text-gray-700 transition hover:text-gray-700/75'
+                                className='text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75'
                                 href={item.url}
                               >
                                 {item.label}
@@ -72,7 +74,7 @@ export default function Footer() {
             </div>
 
             {/* Legal */}
-            <div className='!mt-4 flex h-12 items-center justify-between border-t border-gray-100 sm:flex sm:items-center sm:justify-between'>
+            <div className='!mt-4 flex h-12 items-center justify-between border-t border-gray-100 sm:flex sm:items-center sm:justify-between dark:border-gray-950'>
               <p className='text-sm text-gray-500 sm:text-left'>
                 {config.name} &copy; {getCopyrightYearRange()}. Tous droits réservés.
               </p>

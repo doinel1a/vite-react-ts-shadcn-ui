@@ -1,7 +1,6 @@
 'use client';
 
 import { Laptop, MoonStar, Sun } from 'lucide-react';
-
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
@@ -10,10 +9,10 @@ import {
   DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu';
 
-import { useTheme } from '../../providers/theme';
+import { useThemeStore } from '@/stores/theme';
 
 export default function ThemeToggle() {
-  const { setTheme } = useTheme();
+  const setTheme = useThemeStore((state) => state.setTheme);
 
   return (
     <DropdownMenu>
@@ -24,7 +23,11 @@ export default function ThemeToggle() {
           <span className='sr-only'>Toggle theme</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent data-testid='theme-dropdown-content' align='end'>
+      <DropdownMenuContent
+        data-testid='theme-dropdown-content'
+        align='end'
+        className='bg-white dark:bg-zinc-900 border dark:border-zinc-700 shadow-lg' // <-- Opaque styling
+      >
         <DropdownMenuItem data-testid='theme-light' onClick={() => setTheme('light')}>
           <Sun className='mr-2 h-[1.2rem] w-[1.2rem]' />
           Light

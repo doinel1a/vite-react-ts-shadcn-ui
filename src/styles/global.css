@@ -22,6 +22,7 @@
     --input: 214.3 31.8% 91.4%;
     --ring: 221.2 83.2% 53.3%;
     --radius: 0.5rem;
+    --header-bg-color: rgba(249, 250, 251, 0.7);
   }
 
   .dark {
@@ -44,6 +45,7 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 224.3 76.3% 48%;
+    --header-bg-color: rgba(17, 24, 39, 0.7);
   }
 }
 
@@ -51,6 +53,10 @@
   html,
   body {
     @apply h-full w-full;
+  }
+
+  body {
+    @apply bg-[hsl(var(--background))] text-[hsl(var(--foreground))];
   }
 
   #root {
@@ -110,13 +116,7 @@ footer {
 }
 
 .page-content {
+  @apply px-3 py-4 sm:px-[10vw];
   width: 100%;
   max-width: 100rem;
-  padding: 0 max(4rem, 5vw);
-}
-
-@media (max-width: 1200px) {
-  .page-content {
-    padding: 0 10px;
-  }
 }

@@ -1,5 +1,8 @@
+@reference "@/styles/tailwind.css";
+
 .environment {
-  padding: 5px 10px;
+  @apply text-xs font-semibold;
+  padding: 2px 5px;
   border-radius: 12px;
   font-weight: semibold;
 }
@@ -27,19 +30,13 @@
 
   height: 80px;
   background-color: transparent;
-  /* background: linear-gradient(
-    to bottom,
-    rgba(249, 250, 251, 0.7) 0%,
-    rgba(249, 250, 251, 1) 100%
-  );
-  background-size: 100% 200%; */
   background-position: 0 0;
 
   border-bottom: 1px solid transparent;
 }
 
 .header.semiOpaque {
-  background-color: rgba(249, 250, 251, 0.7);
+  background-color: var(--header-bg-color);
   border-bottom: 1px solid #e8e8e8;
   backdrop-filter: blur(10px);
   background-position: 0 -100%;

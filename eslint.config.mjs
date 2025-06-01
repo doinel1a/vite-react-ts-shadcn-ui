@@ -1,13 +1,13 @@
 // eslint.config.mjs
 import eslintReact from '@eslint-react/eslint-plugin';
 import eslintJs from '@eslint/js';
+import vitest from '@vitest/eslint-plugin';
 import prettier from 'eslint-config-prettier/flat';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
 import reactHooks from 'eslint-plugin-react-hooks';
 import sonarjs from 'eslint-plugin-sonarjs';
 import unicorn from 'eslint-plugin-unicorn';
 import tseslint from 'typescript-eslint';
-import vitest from "@vitest/eslint-plugin";
 
 export default [
   // Base + TS rules
@@ -30,18 +30,17 @@ export default [
 
   // Plugin-based configs
   eslintReact.configs.recommended,
-  
+
   // Vitest rules
   {
-    files: ["tests/**"], // or any other pattern
+    files: ['tests/**'], // or any other pattern
     plugins: {
       vitest
     },
     rules: {
       ...vitest.configs.recommended.rules, // you can also use vitest.configs.all.rules to enable all rules
-      "vitest/max-nested-describe": ["error", { "max": 3 }] // you can also modify rules' behavior using option like this
-    },
-
+      'vitest/max-nested-describe': ['error', { max: 3 }] // you can also modify rules' behavior using option like this
+    }
   },
 
   {

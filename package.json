@@ -44,6 +44,16 @@
     "node": ">=v18",
     "pnpm": ">=8.0.0"
   },
+  "keywords": [
+    "vite",
+    "react",
+    "typescript",
+    "shadcn-ui",
+    "tailwindcss",
+    "radix-ui",
+    "zustand",
+    "tanstack-router"
+  ],
   "browserslist": [
     "last 3 versions",
     "> 0.2%",

@@ -34,17 +34,19 @@ export default function Navbar() {
         )}
       </div>
 
-      <div className='flex gap-4 p-2'>
-        <Link to='/' className='[&.active]:font-bold'>
-          Home
-        </Link>{' '}
-        <Link to='/about' className='[&.active]:font-bold'>
-          About
-        </Link>
-      </div>
+      <div className='flex items-center gap-12'>
+        <div className='flex gap-4 p-2'>
+          <Link to='/' className='[&.active]:font-bold'>
+            Home
+          </Link>{' '}
+          <Link to='/about' className='[&.active]:font-bold'>
+            About
+          </Link>
+        </div>
 
-      <div>
-        <ThemeToggle />
+        <div>
+          <ThemeToggle />
+        </div>
       </div>
     </header>
   );
