@@ -52,20 +52,24 @@ export default function Index() {
 
   return (
     <div className='page-content flex flex-col gap-6 pt-12'>
-      <h1 className='text-3xl font-bold tracking-tight'>
-        Welcome to <span className='text-teal-600'>launchplate-react</span>
-      </h1>
-      <p className='text-muted-foreground'>
-        This is a <b>template</b> for <i>building modern web applications</i> with React,
-        TypeScript, and Vite. It includes a set of features and best practices to help you get
-        started quickly.
-      </p>
-      <p className='text-muted-foreground'>
-        The application is built with the latest version of React and Vite, and it uses TypeScript
-        for type safety and better developer experience. It also includes a set of tools and
-        libraries to help you build modern web applications, such as Tailwind CSS for styling, React
-        Router for routing, and MSW for mocking APIs.
-      </p>
+      <div className='mb-12 flex flex-col'>
+        <h1 className='raleway3'>
+          Welcome to <span className='text-teal-600'>launchplate-react</span>
+        </h1>
+        <article className='prose lg:prose-xl'>
+          <p className='text-muted-foreground'>
+            This is a <b>template</b> for <i>building modern web applications</i> with React,
+            TypeScript, and Vite. It includes a set of features and best practices to help you get
+            started quickly.
+          </p>
+          <p className='text-muted-foreground'>
+            The application is built with the latest version of React and Vite, and it uses
+            TypeScript for type safety and better developer experience. It also includes a set of
+            tools and libraries to help you build modern web applications, such as Tailwind CSS for
+            styling, React Router for routing, and MSW for mocking APIs.
+          </p>
+        </article>
+      </div>
 
       <div className='hero-item'>
         <h1 id='greeting' className='hero-item-title'>
