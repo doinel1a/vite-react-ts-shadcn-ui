@@ -1,14 +1,14 @@
 'use client';
 
 import { Laptop, MoonStar, Sun } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+
+import { Button } from '@/core/components/ui/button/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger
-} from '@/components/ui/dropdown-menu';
-
+} from '@/core/components/ui/dropdown-menu';
 import { useThemeStore } from '@/stores/theme';
 
 export default function ThemeToggle() {
@@ -26,7 +26,7 @@ export default function ThemeToggle() {
       <DropdownMenuContent
         data-testid='theme-dropdown-content'
         align='end'
-        className='bg-white dark:bg-zinc-900 border dark:border-zinc-700 shadow-lg' // <-- Opaque styling
+        className='border bg-white shadow-lg dark:border-zinc-700 dark:bg-zinc-900' // <-- Opaque styling
       >
         <DropdownMenuItem data-testid='theme-light' onClick={() => setTheme('light')}>
           <Sun className='mr-2 h-[1.2rem] w-[1.2rem]' />

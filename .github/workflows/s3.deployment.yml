@@ -1,0 +1,141 @@
+name: S3 Deployment
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Select the environment to deploy to'
+        required: true
+        default: 'qa'
+        type: choice
+        options:
+          - qa
+          - staging
+          - production
+  push:
+    branches:
+      - 'main'
+      - 'staging'
+      - 'qa'
+      - 'release/*'
+      - 'feature/*'
+      - 'bugfix/*'
+  pull_request:
+    branches:
+      - 'main'
+      - 'staging'
+      - 'qa'
+      - 'release/*'
+      - 'feature/*'
+      - 'bugfix/*'
+
+env:
+  ENVIRONMENT: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.environment || (github.ref_name == 'main' && 'production' || github.ref_name == 'staging' && 'staging' || 'qa') }}
+
+jobs:
+  build:
+    name: Lint, Test & Build
+    runs-on: ubuntu-latest
+    outputs:
+      app_version: ${{ steps.get_version.outputs.app_version }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4.1.0
+        with:
+          version: latest
+          run_install: true
+
+      - name: Run Linter
+        run: pnpm run lint
+        continue-on-error: true
+
+      - name: Install Playwright dependencies
+        run: npx playwright install-deps
+
+      - name: Run Playwright tests
+        run: pnpm test
+        env:
+          CI: true
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30
+
+      - name: Get App version
+        id: get_version
+        run: |
+          APP_VERSION=$(node -p "require('./package.json').version")
+          echo "app_version=$APP_VERSION" >> $GITHUB_OUTPUT
+          echo "App Version: $APP_VERSION"
+
+      - name: Build project
+        run: npm run build:${{ env.ENVIRONMENT }}
+
+      - name: Upload production-ready build files
+        uses: actions/upload-artifact@v4
+        with:
+          name: distributable
+          path: ./dist
+
+  deploy:
+    name: Deploy to S3
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: distributable
+          path: ./dist
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1 # change this if needed
+
+      - name: Upload to S3 bucket
+        env:
+          AWS_ACCESS_KEY_ID: ${{ env.ENVIRONMENT == 'production' && secrets.AWS_ACCESS_KEY_ID_PRODUCTION || env.ENVIRONMENT == 'staging' && secrets.AWS_ACCESS_KEY_ID_STAGING || secrets.AWS_ACCESS_KEY_ID_QA }}
+          AWS_SECRET_ACCESS_KEY: ${{ env.ENVIRONMENT == 'production' && secrets.AWS_SECRET_ACCESS_KEY_PRODUCTION || env.ENVIRONMENT == 'staging' && secrets.AWS_SECRET_ACCESS_KEY_STAGING || secrets.AWS_SECRET_ACCESS_KEY_QA }}
+        run: |
+          BUCKET_NAME="my-app-${{ env.ENVIRONMENT }}"
+          echo "Deploying to $BUCKET_NAME"
+          aws s3 sync ./dist s3://$BUCKET_NAME --delete
+
+  slack:
+    name: Slack
+    needs: deploy
+    runs-on: ubuntu-latest
+    if: always()
+    steps:
+      - uses: technote-space/workflow-conclusion-action@v3
+
+      - uses: 8398a7/action-slack@v3
+        with:
+          status: custom
+          fields: workflow,job,commit,repo,ref,author,took
+          custom_payload: |
+            {
+              attachments: [{
+                color: '${{ env.WORKFLOW_CONCLUSION }}' === 'success' ? 'good' : '${{ env.WORKFLOW_CONCLUSION }}' === 'failure' ? 'danger' : 'warning',
+                text: `${process.env.AS_WORKFLOW}\n${process.env.AS_JOB} (${process.env.AS_COMMIT}) of ${process.env.AS_REPO}@${process.env.AS_REF} by ${process.env.AS_AUTHOR} ${{ env.WORKFLOW_CONCLUSION }} in ${process.env.AS_TOOK}`,
+              }]
+            }
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}

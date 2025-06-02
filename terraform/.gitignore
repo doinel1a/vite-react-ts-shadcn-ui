@@ -1,0 +1,30 @@
+# terraform state files
+# TO-DO: Commit the states when using this template in private repositories
+*.tfstate
+*.tfstate.*
+*.tfplan
+*.tfplan.json
+
+# Local .terraform directories
+
+**/.terraform/*
+
+# Ignore variables files
+
+*.auto.tfvars
+*.tfvars
+*.tfvars.json
+
+# Ignore override files
+
+*.tfoverride
+
+# Ignore environment-specific files
+
+.envrc
+
+# Ignore CLI configuration files
+
+.terraformrc
+
+terraform.rc

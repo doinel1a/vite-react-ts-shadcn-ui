@@ -1,0 +1,121 @@
+{
+  "lockfile_version": "1",
+  "packages": {
+    "awscli@latest": {
+      "last_modified": "2025-05-16T20:19:48Z",
+      "resolved": "github:NixOS/nixpkgs/12a55407652e04dcf2309436eb06fef0d3713ef3#awscli",
+      "source": "devbox-search",
+      "version": "1.37.21",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/kx0nyd82ar3ajzwbcdw56zzvbivh8phd-awscli-1.37.21",
+              "default": true
+            },
+            {
+              "name": "dist",
+              "path": "/nix/store/0kiij3r29vams4xdly1j6ib989d6dg98-awscli-1.37.21-dist"
+            }
+          ],
+          "store_path": "/nix/store/kx0nyd82ar3ajzwbcdw56zzvbivh8phd-awscli-1.37.21"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/smz9bm1zf8slhl5p94klwd5i9ps3azr8-awscli-1.37.21",
+              "default": true
+            },
+            {
+              "name": "dist",
+              "path": "/nix/store/0pkrgfbvr96wp9c5n7arv3iampydwv91-awscli-1.37.21-dist"
+            }
+          ],
+          "store_path": "/nix/store/smz9bm1zf8slhl5p94klwd5i9ps3azr8-awscli-1.37.21"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/r5819yiy7kh0z3xzv2jz90v58ky5h0kh-awscli-1.37.21",
+              "default": true
+            },
+            {
+              "name": "dist",
+              "path": "/nix/store/6knvfncqpmxx2yjcn2gswknqh63kq33d-awscli-1.37.21-dist"
+            }
+          ],
+          "store_path": "/nix/store/r5819yiy7kh0z3xzv2jz90v58ky5h0kh-awscli-1.37.21"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/l4n82nf5mq4bfx8pjm10hn38xb22s3f8-awscli-1.37.21",
+              "default": true
+            },
+            {
+              "name": "dist",
+              "path": "/nix/store/n9rbikvnh6c8byvd7xc07193rib9caw7-awscli-1.37.21-dist"
+            }
+          ],
+          "store_path": "/nix/store/l4n82nf5mq4bfx8pjm10hn38xb22s3f8-awscli-1.37.21"
+        }
+      }
+    },
+    "github:NixOS/nixpkgs/nixpkgs-unstable": {
+      "last_modified": "2025-05-31T03:30:20Z",
+      "resolved": "github:NixOS/nixpkgs/59138c7667b7970d205d6a05a8bfa2d78caa3643?lastModified=1748662220&narHash=sha256-7gGa49iB9nCnFk4h%2Fg9zwjlQAyjtpgcFkODjcOQS0Es%3D"
+    },
+    "terraform@latest": {
+      "last_modified": "2025-05-22T03:53:02Z",
+      "resolved": "github:NixOS/nixpkgs/a16efe5d2fc7455d7328a01f4692bfec152965b3#terraform",
+      "source": "devbox-search",
+      "version": "1.12.1",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/kqk0wn39lhnmvhbk3s997lna2l95fzfw-terraform-1.12.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/kqk0wn39lhnmvhbk3s997lna2l95fzfw-terraform-1.12.1"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/ssvlf1aacjgrldkqfc68nw234vq65yyj-terraform-1.12.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/ssvlf1aacjgrldkqfc68nw234vq65yyj-terraform-1.12.1"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/b06v2mz632zqc509bxcafzp9cc3c775l-terraform-1.12.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/b06v2mz632zqc509bxcafzp9cc3c775l-terraform-1.12.1"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/glikfly74v2wgaa1a174qm8y7fjjmyln-terraform-1.12.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/glikfly74v2wgaa1a174qm8y7fjjmyln-terraform-1.12.1"
+        }
+      }
+    }
+  }
+}

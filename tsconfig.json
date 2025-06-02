@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "ESNext",
     "useDefineForClassFields": true,
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "lib": ["DOM", "DOM.Iterable", "ESNext", "WebWorker"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": false,
@@ -19,7 +19,7 @@
     "paths": {
       "@/*": ["./src/*"]
     },
-    "typeRoots": ["./node_modules/@types", "./src/types"],
+    "typeRoots": ["./node_modules/@types", "./src/types/index.d.ts"]
   },
   "include": [
     "tests",
@@ -34,7 +34,7 @@
     "playwright.config.ts",
     "commitlint.config.ts",
     "prettier.config.cjs",
-    "vitest.config.ts",
+    "vitest.config.ts"
   ],
   "exclude": ["node_modules"],
   "references": [{ "path": "./tsconfig.node.json" }]

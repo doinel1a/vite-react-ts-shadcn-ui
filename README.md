@@ -63,6 +63,23 @@ This repository is ideal for front-end developers who want to build modern, fast
 
   You can search for available packages on the [NixHub][nixhub] website.
 
+### Recommended VS Code extensions:
+
+- **[ESLint][eslint]**: for linting your code;
+- **[Prettier - Code formatter][prettier]**: for formatting your code;
+- **[Tailwind CSS IntelliSense][tailwind-intellisense]**: for Tailwind CSS support;
+
+Set the following settings in your VS Code `settings.json` file to enable ESLint and Prettier:
+
+```json
+"editor.formatOnSave": true,
+"editor.defaultFormatter": "esbenp.prettier-vscode",
+"editor.codeActionsOnSave": {
+  "source.fixAll.eslint": "explicit",
+  "source.organizeImports": "explicit"
+},
+```
+
 ### Start developing:
 
 - Get the repository:
@@ -137,6 +154,13 @@ To update the dependencies of your project, you can use the following commands:
 - To update all dependencies to their latest versions: `pnpm up`
 - To update a specific dependency to its latest version: `pnpm up <dependency-name>`
   @tanstack/router-plugin-vite has an incorrect vite plugin version, which forces it to be uninstalled. Reinstall it by running: `pnpm i -D @vitejs/plugin-legacy`
+
+---
+
+## Use TailwindCSS
+
+- In `global.css`, you can use TailwindCSS classes to style your components.
+- In `global.scss`, use (S)CSS-native classes to style your components. TailindCSS classes cannot be used in this file.
 
 ---
 

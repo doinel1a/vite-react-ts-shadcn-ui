@@ -80,7 +80,10 @@ export default [
         {
           checksVoidReturn: { attributes: false }
         }
-      ]
+      ],
+
+      '@typescript-eslint/no-unsafe-call': 'off',
+      '@typescript-eslint/no-unsafe-argument': 'off'
     },
     settings: {
       react: {

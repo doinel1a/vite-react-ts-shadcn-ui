@@ -1,0 +1,130 @@
+@use 'sass:map';
+
+/* Provide classes for each font family and style
+ * Format:
+ * - .font-<family-name>
+ * - .<family-name><style-number>
+ * Example: .font-roboto, .roboto1, .roboto2, etc. */
+
+// SCSS Mixins
+@mixin font-style($size, $weight, $spacing, $marginBottom, $importance: false) {
+  @if $importance {
+    font-size: $size !important;
+    font-weight: $weight !important;
+    line-height: 1.02 !important;
+    letter-spacing: $spacing !important;
+    margin-bottom: $marginBottom !important;
+  } @else {
+    font-size: $size;
+    font-weight: $weight;
+    line-height: 1.02;
+    letter-spacing: $spacing;
+    margin-bottom: $marginBottom;
+  }
+}
+
+// Font Config Map
+$fonts: (
+  brockmann: (
+    family: 'Brockmann',
+    type: sans-serif
+  ),
+  roboto: (
+    family: 'Roboto',
+    type: sans-serif
+  ),
+  kg: (
+    family: 'Kalnia Glaze',
+    type: serif
+  ),
+  raleway: (
+    family: 'Raleway',
+    type: sans-serif
+  )
+);
+
+$styles: (
+  1: (
+    size: 110px,
+    weight: 600,
+    spacing: -0.03em,
+    marginBottom: 0.5em
+  ),
+  2: (
+    size: 72px,
+    weight: 500,
+    spacing: -0.01em,
+    marginBottom: 0.5em
+  ),
+  3: (
+    size: 60px,
+    weight: 600,
+    spacing: -0.02em,
+    marginBottom: 0.5em
+  ),
+  4: (
+    size: 48px,
+    weight: 500,
+    spacing: -0.01em,
+    marginBottom: 0.5em
+  ),
+  5: (
+    size: 36px,
+    weight: 500,
+    spacing: -0.01em,
+    marginBottom: 0.5em
+  )
+);
+
+// Font Mixin
+// Usage: @include font('font-roboto1') or @include font('roboto1')
+@mixin font($font, $style) {
+  $f: map.get($fonts, $font);
+  $s: map.get($styles, $style);
+
+  @if $f == null {
+    @error "Font `#{$font}` not found.";
+  }
+
+  @if $s == null {
+    @error "Style `#{$style}` not found.";
+  }
+
+  font-family: map.get($f, family), map.get($f, type);
+  font-size: map.get($s, size);
+  font-weight: map.get($s, weight);
+  line-height: 1.02;
+  letter-spacing: map.get($s, spacing);
+  margin-bottom: map.get($s, marginBottom);
+}
+
+@layer base {
+  // Font families
+  .font-brockmann {
+    font-family: 'Brockmann', sans-serif;
+  }
+  .font-roboto {
+    font-family: 'Roboto', sans-serif;
+  }
+  .font-kg {
+    font-family: 'Kalnia Glaze', serif;
+  }
+  .font-raleway {
+    font-family: 'Raleway', sans-serif;
+  }
+
+  // Generate Classes
+  @each $name, $font in $fonts {
+    @each $num, $style in $styles {
+      .#{$name}#{$num} {
+        font-family: map.get($font, family), map.get($font, type);
+        @include font-style(
+          map.get($style, size),
+          map.get($style, weight),
+          map.get($style, spacing),
+          map.get($style, marginBottom)
+        );
+      }
+    }
+  }
+}

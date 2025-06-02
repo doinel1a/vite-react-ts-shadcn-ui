@@ -1,5 +1,5 @@
 import useConfiguration from '@/core/hooks/use-configuration';
-import { cn, isStringNullOrEmpty } from '@/lib/utils';
+import { cn, isStringNullOrEmpty } from '@/core/lib/utils';
 
 import { Skeleton } from '../ui/skeleton';
 import marketing from './config/marketing';

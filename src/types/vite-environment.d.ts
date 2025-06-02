@@ -14,6 +14,7 @@ interface ViteTypeOptions {
 interface ImportMetaEnv {
   readonly VITE_REACT_APP_VERSION: string
   readonly VITE_API_URI?: string
+  readonly VITE_ENABLE_MOCKING?: string
   // more env variables...
 }
 

@@ -4,7 +4,7 @@ import { Link } from '@tanstack/react-router';
 
 import useConfiguration from '@/core/hooks/use-configuration';
 import { useScrollPosition } from '@/core/hooks/use-scroll-position';
-import { cn } from '@/lib/utils';
+import { cn } from '@/core/lib/utils';
 
 import ThemeToggle from '../ui/theme-toggle';
 import styles from './navbar.module.css';

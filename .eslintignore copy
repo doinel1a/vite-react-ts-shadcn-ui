@@ -5,13 +5,12 @@
 
 # testing
 /coverage
-/tests_results/
+/test-results/
 /playwright-report/
 /playwright/.cache/
 
 # production
 /dist
-/dist-ssr
 
 # misc
 .DS_Store
@@ -24,19 +23,12 @@ yarn-error.log*
 .pnpm-debug.log*
 
 # local env files
-**/*.env*.local
-**/*.env
-**/*.env.production
-**/*.env.staging
-**/*.env.qa
-**/*.env.development
+.env*.local
 
-# editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+vite.config.ts
+vite-environment.d.ts

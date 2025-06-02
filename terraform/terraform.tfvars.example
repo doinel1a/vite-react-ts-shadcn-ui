@@ -1,0 +1,9 @@
+github_token=
+github_owner="PheonBest"
+domain="example.com"
+domain_names={qa="launchplate-react-qa.example.com",staging="launchplate-react-staging.example.com",production ="launchplate-react.example.com"}
+cloudflare_email="john.doe@gmail.com"
+# Create an API token (not a legacy API key), cf. https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs#api_token
+cloudflare_api_token=
+github_repository=
+aws_region="eu-west-3"

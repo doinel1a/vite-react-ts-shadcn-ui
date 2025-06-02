@@ -2,7 +2,7 @@
 /* eslint-disable unicorn/no-useless-undefined */
 import { describe, expect, it } from 'vitest';
 
-import { isStringNullOrEmpty } from '@/lib/utils';
+import { isStringNullOrEmpty } from '@/core/lib/utils';
 
 describe('isStringNullOrEmpty', () => {
   it('should return true for undefined', () => {

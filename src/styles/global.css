@@ -1,4 +1,10 @@
+@import '../fonts/google-fonts.css';
+@import '../fonts/static-fonts.css';
 @import './tailwind.css';
+
+/* Disclaimer: Importing google fonts may break GDPR
+ * cf. https://thehackernews.com/2022/01/german-court-rules-websites-embedding.html
+ */
 
 @layer base {
   :root {
@@ -57,6 +63,8 @@
 
   body {
     @apply bg-[hsl(var(--background))] text-[hsl(var(--foreground))];
+
+    font-family: 'Roboto', sans-serif;
   }
 
   #root {
@@ -97,8 +105,10 @@ body,
 #__next {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
   width: 100%;
+  align-items: center;
 }
 body {
   line-height: 1.5;
@@ -116,7 +126,21 @@ footer {
 }
 
 .page-content {
-  @apply px-3 py-4 sm:px-[10vw];
+  @apply px-3 py-4 sm:px-[8vw];
   width: 100%;
   max-width: 100rem;
+}
+
+.hero-item {
+  @apply flex flex-col items-start justify-center gap-0 md:flex-row md:gap-10;
+}
+.hero-item-title {
+  @apply sm:min-w-[18rem] md:w-[30%];
+  @include font('raleway', 4);
+}
+.hero-item-description {
+  @apply mt-1 text-base font-normal italic;
+}
+.hero-card-content {
+  @apply grid auto-cols-fr auto-rows-fr grid-cols-2 gap-8;
 }
