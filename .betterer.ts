@@ -1,5 +1,4 @@
 import { regexp } from '@betterer/regexp';
-import { typescript } from '@betterer/typescript';
 
 import { countFiles } from './utils/count-files';
 
