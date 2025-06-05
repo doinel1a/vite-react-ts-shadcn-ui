@@ -61,8 +61,13 @@ jobs:
         run: pnpm run lint
         continue-on-error: true
 
-      - name: Run Playwright tests
+      - name: Run Vitest tests
         run: pnpm test
+        env:
+          CI: true
+
+      - name: Run Playwright tests
+        run: pnpm test:e2e
         env:
           CI: true
 
@@ -96,29 +101,24 @@ jobs:
         run: npm run build:${{ env.ENVIRONMENT }}
 
       - name: Upload production-ready build files
-        uses: actions/upload-artifact@v4
+        id: deployment
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: distributable
           path: ./dist
 
   deploy:
     name: Deploy
     needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
 
     steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: distributable
-          path: ./dist
-
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+        id: deployment
+        uses: actions/deploy-pages@v4
 
   slack:
     name: Slack
