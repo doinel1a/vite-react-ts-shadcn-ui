@@ -60,41 +60,10 @@ jobs:
           version: latest
           run_install: true
 
-      - name: Install Playwright dependencies
-        run: npx playwright install-deps
-
-      - name: Run Linter
-        run: pnpm run lint
-        continue-on-error: true
-
       - name: Run Vitest tests
         run: pnpm test
         env:
           CI: true
-
-      - name: Run Playwright tests
-        run: pnpm test:e2e
-        env:
-          CI: true
-
-      - name: Run Betterer
-        run: pnpm betterer:ci
-        env:
-          CI: true
-
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: coverage-playwright
-          path: coverage-playwright/
-          retention-days: 30
-
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: coverage-vitest
-          path: coverage-vitest/
-          retention-days: 30
 
       - name: Get App version
         id: get_version

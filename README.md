@@ -20,17 +20,13 @@
 [devbox-introd]: https://www.jetify.com/docs/devbox/
 [devbox-install]: https://www.jetify.com/docs/devbox/installing_devbox/
 [nixhub]: https://www.nixhub.io/
-[betterer](https://marketplace.visualstudio.com/items?itemName=Betterer.betterer-vscode)
-
-# Vite React TypeScript & Shadcn/ui — Template
-
-This development starter template is the ultimate solution to help you getting started on your project in no time, without the hassle of setting up and configuring your development environment from scratch each time you start working.
-This repository is ideal for front-end developers who want to build modern, fast and reliable web applications with the latest cutting edge technologies such as **React.js**, **TypeScript**, **Shadcn/ui**, **TailwindCSS**, **ESLint**, **Prettier**, **Husky**, **Vite** and much more!
-
----
-
-**[Demo][demo]** &nbsp;&nbsp;**|**&nbsp;&nbsp; **[Bug(label: bug)][issues]** &nbsp;&nbsp;**|**&nbsp;&nbsp; **[Feature(label: enhancement)][issues]**
-
+[node-js]: https://nodejs.org/en/
+[vscode]: https://code.visualstudio.com/
+[eslint]: https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
+[prettier]: https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
+[tailwind-intellisense]: https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss
+[betterer]: https://marketplace.visualstudio.com/items?itemName=Betterer.betterer-vscode
+[devbox]: https://www.jetify.com/docs/devbox/
 ---
 
 ## :bookmark: Table of contents
@@ -178,7 +174,7 @@ Please check the [**contributing guide**][code-of-conduct] for details on how to
 
 All logos and trademarks are the property of their respective owners.
 Everything else is distributed under the **MIT License** .
-See the [LICENSE][license] file for more informations.
+See the [LICENSE][license] file for more information.
 
 [Back to :arrow_up:](#vite-react-typescript--shadcnui--template "Back to 'Table of contents' section")
 

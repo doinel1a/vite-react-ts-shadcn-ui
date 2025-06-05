@@ -12,5 +12,12 @@ export async function enableMockingIfNeeded() {
     console.error('Mocking is enabled, but the worker is not defined.');
     return;
   }
-  return worker.start();
+  return worker.start({
+    serviceWorker: {
+      url: import.meta.env.VITE_BASE_PATH + '/mockServiceWorker.js',
+      options: {
+        scope: import.meta.env.VITE_BASE_PATH
+      }
+    }
+  });
 }

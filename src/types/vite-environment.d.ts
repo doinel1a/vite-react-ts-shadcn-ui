@@ -12,10 +12,10 @@ interface ViteTypeOptions {
 
 // eslint-disable-next-line unicorn/prevent-abbreviations
 interface ImportMetaEnv {
-  readonly VITE_REACT_APP_VERSION: string
+  readonly VITE_APP_VERSION: string
   readonly VITE_API_URI?: string
   readonly VITE_ENABLE_MOCKING?: string
-  // more env variables...
+  readonly VITE_BASE_PATH: string
 }
 
 interface ImportMeta {

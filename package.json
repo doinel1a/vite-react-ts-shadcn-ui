@@ -15,6 +15,7 @@
   "issues": {
     "url": "https://github.com/PheonBest/vite-react-ts-shadcn-ui-ci-cd-devbox/issues"
   },
+  "homepage": "/launchplate-react",
   "scripts": {
     "prepare": "husky",
     "postinstall": "husky & playwright install",
@@ -36,7 +37,8 @@
     "commit": "git-cz",
     "betterer": "betterer",
     "betterer:watch": "betterer --watch",
-    "betterer:ci": "betterer ci"
+    "betterer:ci": "betterer ci",
+    "serve": "tsx dist-server/server.ts"
   },
   "config": {
     "commitizen": {
@@ -119,6 +121,7 @@
     "@testing-library/user-event": "^14.6.1",
     "@total-typescript/ts-reset": "^0.6.1",
     "@types/eslint-plugin-jsx-a11y": "^6.10.0",
+    "@types/express": "^5.0.2",
     "@types/node": "^22.15.29",
     "@types/react": "^19.1.6",
     "@types/react-dom": "^19.1.5",
@@ -135,6 +138,7 @@
     "commitizen": "^4.3.1",
     "cross-env": "^7.0.3",
     "cssnano": "^7.0.7",
+    "dotenv": "^16.5.0",
     "eslint": "^8.57.1",
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-jsx-a11y": "^6.10.2",
@@ -144,6 +148,7 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-sonarjs": "^0.25.1",
     "eslint-plugin-unicorn": "^56.0.1",
+    "express": "^5.1.0",
     "husky": "^9.1.7",
     "inquirer": "^9.3.7",
     "jsdom": "^26.1.0",
@@ -158,6 +163,7 @@
     "sass": "^1.89.1",
     "tailwindcss": "^4.1.8",
     "terser": "^5.40.0",
+    "tsx": "^4.19.4",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.33.0",
     "vite": "link:@tanstack/router-plugin/vite",
