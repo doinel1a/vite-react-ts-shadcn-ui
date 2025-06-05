@@ -7,7 +7,14 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
     exclude: ['tests/e2e/**', 'node_modules/**', 'dist/**', '.devbox/**'],
-    setupFiles: ['./tests/unit/setup.ts']
+    setupFiles: ['./tests/unit/setup.ts'],
+    reporters: ['default'],
+    coverage: {
+      provider: 'v8',
+      reporter: ['text', 'html', 'json'],
+      reportsDirectory: './coverage-vitest',
+      reportOnFailure: true
+    }
   },
   resolve: {
     alias: {

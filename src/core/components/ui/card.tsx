@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { cn } from '@/core/lib/utils';
+import { cn } from '@/lib/utils';
 
 const Card = ({
   ref: reference,

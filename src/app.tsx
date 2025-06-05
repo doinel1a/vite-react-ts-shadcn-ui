@@ -15,14 +15,13 @@ declare module '@tanstack/react-router' {
   }
 }
 
-
 function App() {
   const setTheme = useThemeStore((state) => state.setTheme);
 
   useEffect(() => {
-  const theme = useThemeStore.getState().theme;
-setTheme(theme);
-}, []);
+    const theme = useThemeStore.getState().theme;
+    setTheme(theme);
+  }, []);
   return (
     <StrictMode>
       <RouterProvider router={router} />

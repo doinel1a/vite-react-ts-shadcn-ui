@@ -8,6 +8,7 @@
 /tests_results/
 /playwright-report/
 /playwright/.cache/
+.nyc_output
 
 # production
 /dist

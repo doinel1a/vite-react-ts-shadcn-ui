@@ -1,6 +1,6 @@
 import type { Locator } from '@playwright/test';
 
-import { expect, test } from '@playwright/test';
+import { expect, test } from 'playwright-test-coverage';
 
 import config from '../../_config';
 

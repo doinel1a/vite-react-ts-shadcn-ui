@@ -45,31 +45,31 @@ $fonts: (
 
 $styles: (
   1: (
-    size: 110px,
+    size: calc(14.56px + 7.95vw),
     weight: 600,
     spacing: -0.03em,
     marginBottom: 0.5em
   ),
   2: (
-    size: 72px,
+    size: calc(14.74px + 4.77vw),
     weight: 500,
     spacing: -0.01em,
     marginBottom: 0.5em
   ),
   3: (
-    size: 60px,
+    size: calc(10.91px + 4.09vw),
     weight: 600,
     spacing: -0.02em,
     marginBottom: 0.5em
   ),
   4: (
-    size: 48px,
+    size: calc(9.82px + 3.18vw),
     weight: 500,
     spacing: -0.01em,
     marginBottom: 0.5em
   ),
   5: (
-    size: 36px,
+    size: calc(11.44px + 2.05vw),
     weight: 500,
     spacing: -0.01em,
     marginBottom: 0.5em

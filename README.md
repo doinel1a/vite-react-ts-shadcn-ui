@@ -20,6 +20,7 @@
 [devbox-introd]: https://www.jetify.com/docs/devbox/
 [devbox-install]: https://www.jetify.com/docs/devbox/installing_devbox/
 [nixhub]: https://www.nixhub.io/
+[betterer](https://marketplace.visualstudio.com/items?itemName=Betterer.betterer-vscode)
 
 # Vite React TypeScript & Shadcn/ui — Template
 
@@ -68,6 +69,7 @@ This repository is ideal for front-end developers who want to build modern, fast
 - **[ESLint][eslint]**: for linting your code;
 - **[Prettier - Code formatter][prettier]**: for formatting your code;
 - **[Tailwind CSS IntelliSense][tailwind-intellisense]**: for Tailwind CSS support;
+- **[Betterer][betterer]**: for tracking your code quality over time;
 
 Set the following settings in your VS Code `settings.json` file to enable ESLint and Prettier:
 
@@ -97,7 +99,7 @@ Set the following settings in your VS Code `settings.json` file to enable ESLint
   - To **build** your app **for staging**: `pnpm build:staging`;
   - To **preview** your **production optimized app**: `pnpm preview`;
 
-- Commit your changes and push them to your repository: by using `pnpm commit` or `npx cz`. This will call **[Commitizen][commitlint]** to help you write a conventional commit message.  
+- Commit your changes and push them to your repository: by using `pnpm commit` or `npx cz`. This will call **[Commitizen][commitlint]** to help you write a conventional commit message.
    If you want to skip the commit message, you can use `git commit -m "your commit message"`.
   [Back to :arrow_up:](#vite-react-typescript--shadcnui--template "Back to 'Table of contents' section")
 
@@ -166,16 +168,16 @@ To update the dependencies of your project, you can use the following commands:
 
 ## :busts_in_silhouette: Contribute
 
-Contributions are what make the open source community such an amazing place to learn, inspire, and create.  
-Any contribution is greatly appreciated: big or small, it can be documentation updates, adding new features or something bigger.  
+Contributions are what make the open source community such an amazing place to learn, inspire, and create.
+Any contribution is greatly appreciated: big or small, it can be documentation updates, adding new features or something bigger.
 Please check the [**contributing guide**][code-of-conduct] for details on how to help out and keep in mind that all commits must follow the **[conventional commit format][commitlint]**.
 
 ---
 
 ## :bookmark_tabs: License
 
-All logos and trademarks are the property of their respective owners.  
-Everything else is distributed under the **MIT License** .  
+All logos and trademarks are the property of their respective owners.
+Everything else is distributed under the **MIT License** .
 See the [LICENSE][license] file for more informations.
 
 [Back to :arrow_up:](#vite-react-typescript--shadcnui--template "Back to 'Table of contents' section")

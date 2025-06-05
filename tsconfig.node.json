@@ -8,5 +8,5 @@
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true
   },
-  "include": ["_config.ts", "vite.config.ts", "./package.json"]
+  "include": ["_config.ts", "vite.config.ts", "./package.json", "utils/sitemap.ts"]
 }

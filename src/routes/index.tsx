@@ -52,11 +52,11 @@ export default function Index() {
 
   return (
     <div className='page-content flex flex-col gap-6 pt-12'>
-      <div className='mb-12 flex flex-col'>
+      <div className='mt-12 mb-24 flex flex-col'>
         <h1 className='raleway3'>
           Welcome to <span className='text-teal-600'>launchplate-react</span>
         </h1>
-        <article className='prose lg:prose-xl'>
+        <article className='prose dark:prose-invert lg:prose-xl'>
           <p className='text-muted-foreground'>
             This is a <b>template</b> for <i>building modern web applications</i> with React,
             TypeScript, and Vite. It includes a set of features and best practices to help you get
@@ -72,14 +72,14 @@ export default function Index() {
       </div>
 
       <div className='hero-item'>
-        <h1 id='greeting' className='hero-item-title'>
+        <h1 className='hero-item-title'>
           Use mock APIs to simulate responses{' '}
           <p className='hero-item-description'>(cf. `src/mocks/browser.ts`)</p>
         </h1>
         <Card className='w-full p-4'>
           <CardContent className='hero-card-content'>
             {name ? (
-              <h1 id='greeting' className='raleway3'>
+              <h1 data-testid='greeting' className='raleway3'>
                 Hello, <span className='italic opacity-75'>{name}</span> !
               </h1>
             ) : (
@@ -90,13 +90,13 @@ export default function Index() {
               <div className='flex flex-col items-start justify-center gap-2'>
                 <h2 className='raleway5'>Movies selected for you</h2>
                 <ul
-                  id='graphql-response'
+                  data-testid='graphql-response'
                   className='grid auto-cols-fr auto-rows-fr gap-2 md:grid-cols-3'
                 >
                   {movies.map((movie) => (
                     <li key={movie.title}>
                       <Card className='flex h-full items-center justify-center px-2 py-3'>
-                        <p>{movie.title}</p>
+                        <p aria-label='Movie Title'>{movie.title}</p>
                       </Card>
                     </li>
                   ))}
@@ -150,10 +150,20 @@ export default function Index() {
       </div>
 
       <div className='hero-item'>
-        <h1 className='hero-item-title'>Prettify html with `.prose` class</h1>
+        <h1 className='hero-item-title'>
+          Prettify html with `.prose` class
+          <p className='hero-item-description'>
+            Based on{' '}
+            <a href='https://github.com/tailwindlabs/tailwindcss-typography'>
+              tailwindcss-typography
+            </a>
+            ; This is a Tailwind CSS plugin that provides a set of classes to style HTML elements
+            with a consistent and modern look.
+          </p>
+        </h1>
         <Card className='w-full p-4'>
           <CardContent className='hero-card-content !flex'>
-            <article className='prose lg:prose-xl w-full !max-w-none'>
+            <article className='prose dark:prose-invert lg:prose-xl w-full !max-w-none'>
               <h1>Garlic bread with cheese: What the science tells us</h1>
               <p>
                 For years parents have espoused the health benefits of eating garlic bread with
@@ -173,7 +183,7 @@ export default function Index() {
         <h1 className='hero-item-title'>Test with Playwright & Vitest</h1>
         <Card className='w-full p-4'>
           <CardContent className='hero-card-content'>
-            <div className='prose'>
+            <div className='prose dark:prose-invert'>
               <h3 className='raleway4 not-prose'>Playwright</h3>
               <p>
                 Playwright is a Node.js library to automate Chromium, Firefox and WebKit with a
@@ -187,7 +197,7 @@ export default function Index() {
                 <code className='font-mono'>playwright.config.ts</code> file.
               </p>
             </div>
-            <div className='prose'>
+            <div className='prose dark:prose-invert'>
               <h3 className='raleway4 not-prose'>Vitest</h3>
               <p>
                 Vitest is a blazing fast unit test framework powered by Vite. It is used to test the
@@ -197,6 +207,22 @@ export default function Index() {
               <p>
                 Vitest is used to test the application in a fast and efficient way, and it is used
                 in this project to test the application in different browsers and devices.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+
+      <div className='hero-item'>
+        <h1 className='hero-item-title'>Track code quality with Betterer</h1>
+        <Card className='w-full p-4'>
+          <CardContent className='hero-card-content'>
+            <div className='prose dark:prose-invert'>
+              <h3 className='raleway4 not-prose'>Betterer</h3>
+              <p>
+                Betterer is a tool for tracking code quality over time. It is used to track the
+                quality of the code in this project. It is configured in the{' '}
+                <code className='font-mono'>betterer.config.ts</code> file.
               </p>
             </div>
           </CardContent>

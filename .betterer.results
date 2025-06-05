@@ -1,0 +1,28 @@
+// BETTERER RESULTS V2.
+//
+// If this file contains merge conflicts, use `betterer merge` to automatically resolve them:
+// https://phenomnomnominal.github.io/betterer/docs/results-file/#merge
+//
+exports[`no hack comments`] = {
+  value: `{}`
+};
+
+exports[`no more JavaScript files`] = {
+  value: `{
+    "coverage-vitest/block-navigation.js:5381": [
+      [0, 0, 0, "no more JavaScript files!", "3882686966"]
+    ],
+    "coverage-vitest/prettify.js:5381": [
+      [0, 0, 0, "no more JavaScript files!", "3882686966"]
+    ],
+    "coverage-vitest/sorter.js:5381": [
+      [0, 0, 0, "no more JavaScript files!", "3882686966"]
+    ],
+    "public/mockServiceWorker.js:5381": [
+      [0, 0, 0, "no more JavaScript files!", "3882686966"]
+    ],
+    "src/mocks/mock-service-worker.js:5381": [
+      [0, 0, 0, "no more JavaScript files!", "3882686966"]
+    ]
+  }`
+};

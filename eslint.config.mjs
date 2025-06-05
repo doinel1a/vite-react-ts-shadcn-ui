@@ -81,9 +81,19 @@ export default [
           checksVoidReturn: { attributes: false }
         }
       ],
-
+      'playwright/prefer-native-locators': 'error',
+      '@typescript-eslint/no-unsafe-return': 'off',
       '@typescript-eslint/no-unsafe-call': 'off',
-      '@typescript-eslint/no-unsafe-argument': 'off'
+      '@typescript-eslint/no-unsafe-argument': 'off',
+      'unicorn/prevent-abbreviations': [
+        'off', // 'off' is ignored
+        {
+          extendDefaultReplacements: false, // If I'm understanding, this should achieve the desired end, but also doesn't work
+          ignore: [
+            /./ // 'ignore' is ignored
+          ]
+        }
+      ]
     },
     settings: {
       react: {

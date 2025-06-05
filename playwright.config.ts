@@ -6,6 +6,7 @@ import config from './_config';
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
+  quiet: !!process.env.CI,
   testDir: 'tests/e2e',
   testIgnore: '**/*.unit.test.ts',
   /* Maximum time one test can run for. */
@@ -26,7 +27,18 @@ export default defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html',
+  reporter: [
+    [
+      'html',
+      {
+        outputFolder: './coverage-playwright',
+        open: 'on-failure',
+        host: 'localhost',
+        port: 9222,
+        attachmentsBaseURL: 'http://localhost:3000'
+      }
+    ]
+  ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Maximum time each action such as `click()` can take. Defaults to 0 (no limit). */
@@ -77,7 +89,7 @@ export default defineConfig({
   ],
 
   /* Folder for test artifacts such as screenshots, videos, traces, etc. */
-  outputDir: 'tests_results',
+  outputDir: './coverage-playwright',
 
   /* Run your local dev server before starting the tests */
   webServer: {

@@ -24,17 +24,14 @@
   "include": [
     "tests",
     "src",
-    "**/*.test.ts",
-    "**/*.test.tsx",
     "**/*.tsx",
     "**/*.cjs",
     "**/*.mjs",
-    "tailwind.config.ts",
-    "vite.config.ts",
+    "utils",
     "playwright.config.ts",
-    "commitlint.config.ts",
-    "prettier.config.cjs",
-    "vitest.config.ts"
+    "vite.config.ts",
+    "vitest.config.ts",
+    ".betterer.ts"
   ],
   "exclude": ["node_modules"],
   "references": [{ "path": "./tsconfig.node.json" }]
