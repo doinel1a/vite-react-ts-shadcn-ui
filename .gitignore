@@ -9,6 +9,8 @@
 /playwright-report/
 /playwright/.cache/
 .nyc_output
+coverage-vitest
+coverage-playwright
 
 # production
 /dist

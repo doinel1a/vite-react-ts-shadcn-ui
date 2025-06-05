@@ -4,6 +4,7 @@ import eslintJs from '@eslint/js';
 import vitest from '@vitest/eslint-plugin';
 import prettier from 'eslint-config-prettier/flat';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
+import playwright from 'eslint-plugin-playwright';
 import reactHooks from 'eslint-plugin-react-hooks';
 import sonarjs from 'eslint-plugin-sonarjs';
 import unicorn from 'eslint-plugin-unicorn';
@@ -33,7 +34,7 @@ export default [
 
   // Vitest rules
   {
-    files: ['tests/**'], // or any other pattern
+    files: ['tests/unit/**', 'src/**/*.unit.test.ts'], // or any other pattern
     plugins: {
       vitest
     },
@@ -43,14 +44,26 @@ export default [
     }
   },
 
+  // Playwright rules
+  {
+    files: ['tests/e2e/**', 'src/**/*.e2e.ts', 'src/**/*.e2e.test.tsx'], // or any other pattern
+    plugins: {
+      playwright
+    },
+    rules: {
+      ...playwright.configs['flat/recommended'].rules
+    }
+  },
+
   {
     // Apply remaining plugin rules + custom rules
     plugins: {
       'react-hooks': reactHooks,
       'jsx-a11y': jsxA11y,
-      sonarjs: sonarjs,
-      unicorn: unicorn,
-      vitest: vitest
+      sonarjs,
+      unicorn,
+      vitest,
+      playwright
     },
     rules: {
       // Plugin recommended rules
@@ -58,6 +71,8 @@ export default [
       ...jsxA11y.configs.recommended.rules,
       ...sonarjs.configs.recommended.rules,
       ...unicorn.configs.recommended.rules,
+      ...playwright.configs['flat/recommended'].rules,
+      ...vitest.configs.recommended.rules,
 
       // Base
       quotes: ['error', 'single'],

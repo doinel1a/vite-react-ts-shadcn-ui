@@ -6,7 +6,14 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'jsdom',
-    exclude: ['tests/e2e/**', 'node_modules/**', 'dist/**', '.devbox/**'],
+    exclude: [
+      'tests/e2e/**',
+      'node_modules/**',
+      'dist/**',
+      '.devbox/**',
+      'src/**/*.e2e.ts',
+      'src/**/*.e2e.test.ts'
+    ],
     setupFiles: ['./tests/unit/setup.ts'],
     reporters: ['default'],
     coverage: {
