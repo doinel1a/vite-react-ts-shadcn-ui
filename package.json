@@ -36,7 +36,7 @@
     "commit": "git-cz",
     "betterer": "betterer",
     "betterer:watch": "betterer --watch",
-    "betterer:ci": "betterer --ci"
+    "betterer:ci": "betterer ci"
   },
   "config": {
     "commitizen": {

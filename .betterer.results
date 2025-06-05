@@ -9,15 +9,6 @@ exports[`no hack comments`] = {
 
 exports[`no more JavaScript files`] = {
   value: `{
-    "coverage-vitest/block-navigation.js:5381": [
-      [0, 0, 0, "no more JavaScript files!", "3882686966"]
-    ],
-    "coverage-vitest/prettify.js:5381": [
-      [0, 0, 0, "no more JavaScript files!", "3882686966"]
-    ],
-    "coverage-vitest/sorter.js:5381": [
-      [0, 0, 0, "no more JavaScript files!", "3882686966"]
-    ],
     "public/mockServiceWorker.js:5381": [
       [0, 0, 0, "no more JavaScript files!", "3882686966"]
     ],
