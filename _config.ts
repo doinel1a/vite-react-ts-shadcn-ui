@@ -10,7 +10,6 @@ const config = {
     host: 'localhost',
     port: 3000
   }
-};
+} as const;
 
 export default config;
-
