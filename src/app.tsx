@@ -6,7 +6,7 @@ import Counter from './components/counter';
 import Footer from './components/footer';
 import GithubCorner from './components/github-corner';
 import Navbar from './components/navbar';
-import RootProvider from './providers/root';
+import RootProvider from './components/providers/root';
 
 function App() {
   return (
