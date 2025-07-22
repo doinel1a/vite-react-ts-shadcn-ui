@@ -5,7 +5,7 @@ interface IGithubCorner {
   url: string;
 }
 
-export default function GithubCorner({ title, url }: IGithubCorner) {
+export default function GithubCorner({ title, url }: Readonly<IGithubCorner>) {
   return (
     <a title={title} aria-label={title} href={url} className='github-corner'>
       <svg
@@ -38,4 +38,3 @@ export default function GithubCorner({ title, url }: IGithubCorner) {
     </a>
   );
 }
-
