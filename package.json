@@ -31,8 +31,7 @@
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.7.0",
-    "tailwind-merge": "^3.3.1",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",
@@ -40,13 +39,13 @@
     "@eslint/eslintrc": "^3.3.1",
     "@ianvs/prettier-plugin-sort-imports": "^4.5.1",
     "@playwright/test": "^1.54.1",
+    "@tailwindcss/postcss": "^4.1.11",
     "@total-typescript/ts-reset": "^0.6.1",
     "@types/node": "^24.1.0",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "@types/react-router-dom": "^5.3.3",
     "@vitejs/plugin-react-swc": "^3.11.0",
-    "autoprefixer": "^10.4.21",
     "cssnano": "^7.1.0",
     "eslint": "^9.31.0",
     "eslint-config-prettier": "^10.1.8",
@@ -62,7 +61,8 @@
     "prettier": "^3.6.2",
     "prettier-plugin-tailwindcss": "^0.6.14",
     "sass": "^1.89.2",
-    "tailwindcss": "^3.4.17",
+    "tailwindcss": "^4.1.11",
+    "tw-animate-css": "^1.3.5",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.38.0",
     "vite": "^7.0.5"
