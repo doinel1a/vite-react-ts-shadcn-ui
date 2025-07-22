@@ -40,7 +40,6 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
-    "@builder.io/partytown": "^0.10.3",
     "@commitlint/cli": "^19.8.0",
     "@commitlint/config-conventional": "^19.8.0",
     "@ianvs/prettier-plugin-sort-imports": "^4.4.1",
