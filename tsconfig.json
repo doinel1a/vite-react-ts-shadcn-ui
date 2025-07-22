@@ -1,23 +1,35 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "useDefineForClassFields": true,
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "allowJs": false,
-    "skipLibCheck": true,
-    "esModuleInterop": false,
+    /* Base Options: */
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "module": "ESNext",
-    "moduleResolution": "Node",
+    "skipLibCheck": true,
+    "target": "esnext",
+    "allowJs": true,
     "resolveJsonModule": true,
+    "moduleDetection": "force",
     "isolatedModules": true,
+    "forceConsistentCasingInFileNames": true,
+
+    /* Strictness */
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "checkJs": false,
+    "useDefineForClassFields": true,
+
+    /* Bundled projects */
+    "lib": ["dom", "dom.iterable", "esnext"],
     "noEmit": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
     "jsx": "react-jsx",
+    "incremental": true,
+
+    /* Path Aliases */
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "~/*": ["./*"]
     }
   },
   "include": ["src", ".eslintrc.cjs", "**/*.tsx", "**/*.cjs", "**/*.js"],
