@@ -47,8 +47,17 @@ export default tseslint.config(
   },
   {
     rules: {
-      'unicorn/no-null': 'off'
+      'unicorn/no-null': 'off',
+      'unicorn/prevent-abbreviations': [
+        'error',
+        {
+          allowList: {
+            db: true,
+            ctx: true
+          },
+          ignore: [/env/i, /params/i, /util/i]
+        }
+      ]
     }
   }
 );
-
