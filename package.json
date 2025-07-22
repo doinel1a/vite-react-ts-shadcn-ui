@@ -16,9 +16,10 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
     "lint": "eslint --ext ts --ext tsx ./src",
     "lint:fix": "eslint --ext ts --ext tsx ./src --fix",
-    "prettier": "prettier --write **/**/*.{html,css,scss,js,cjs,mjs,ts,tsx}",
+    "format": "prettier --write **/**/*.{html,css,scss,js,jsx,cjs,mjs,ts,tsx,mdx} --cache",
     "test": "playwright test",
     "test:ui": "playwright test --ui"
   },
