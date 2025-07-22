@@ -4,7 +4,7 @@ import { storageKeys } from '@/lib/constants/keys';
 
 type Theme = 'dark' | 'light' | 'system';
 
-type ThemeProviderProperties = {
+type ThemeProvider = {
   children: React.ReactNode;
   defaultTheme?: Theme;
   storageKey?: string;
@@ -27,7 +27,7 @@ export default function ThemeProvider({
   defaultTheme = 'system',
   storageKey = storageKeys.theme,
   ...properties
-}: Readonly<ThemeProviderProperties>) {
+}: Readonly<ThemeProvider>) {
   const [theme, setTheme] = useState<Theme>(() => {
     const storedTheme = localStorage.getItem(storageKey) as Theme | null;
     return storedTheme ?? defaultTheme;
