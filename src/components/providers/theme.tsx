@@ -17,7 +17,6 @@ type ThemeProviderState = {
 
 const initialState: ThemeProviderState = {
   theme: 'system',
-  // eslint-disable-next-line unicorn/no-null
   setTheme: () => null
 };
 
@@ -28,18 +27,18 @@ export default function ThemeProvider({
   defaultTheme = 'system',
   storageKey = storageKeys.theme,
   ...properties
-}: ThemeProviderProperties) {
-  const [theme, setTheme] = useState<Theme>(
-    () => (localStorage.getItem(storageKey) as Theme) || defaultTheme
-  );
+}: Readonly<ThemeProviderProperties>) {
+  const [theme, setTheme] = useState<Theme>(() => {
+    const storedTheme = localStorage.getItem(storageKey) as Theme | null;
+    return storedTheme ?? defaultTheme;
+  });
 
   useEffect(() => {
-    const root = window.document.documentElement;
-
+    const root = globalThis.document.documentElement;
     root.classList.remove('light', 'dark');
 
     if (theme === 'system') {
-      const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches
+      const systemTheme = globalThis.matchMedia('(prefers-color-scheme: dark)').matches
         ? 'dark'
         : 'light';
 
@@ -67,8 +66,10 @@ export default function ThemeProvider({
 
 export const useTheme = () => {
   const context = useContext(ThemeProviderContext);
-
-  if (context === undefined) throw new Error('useTheme must be used within a ThemeProvider');
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+  if (context == undefined) {
+    throw new Error('useTheme must be used within a ThemeProvider');
+  }
 
   return context;
 };
