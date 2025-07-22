@@ -1,11 +1,11 @@
 import React from 'react';
 
-interface IGithubCorner {
+type TGithubCorner = {
   title: string;
   url: string;
-}
+};
 
-export default function GithubCorner({ title, url }: IGithubCorner) {
+export default function GithubCorner({ title, url }: Readonly<TGithubCorner>) {
   return (
     <a title={title} aria-label={title} href={url} className='github-corner'>
       <svg
@@ -38,4 +38,3 @@ export default function GithubCorner({ title, url }: IGithubCorner) {
     </a>
   );
 }
-

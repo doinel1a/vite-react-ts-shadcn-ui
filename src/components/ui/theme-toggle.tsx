@@ -12,7 +12,7 @@ import {
   DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu';
 
-import { useTheme } from '../../providers/theme';
+import { useTheme } from '../../components/providers/theme';
 
 export default function ThemeToggle() {
   const { setTheme } = useTheme();
@@ -21,21 +21,36 @@ export default function ThemeToggle() {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button data-testid='theme-toggle' variant='outline' size='icon'>
-          <Sun className='h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0' />
-          <MoonStar className='absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100' />
+          <Sun className='h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90' />
+          <MoonStar className='absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0' />
           <span className='sr-only'>Toggle theme</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent data-testid='theme-dropdown-content' align='end'>
-        <DropdownMenuItem data-testid='theme-light' onClick={() => setTheme('light')}>
+        <DropdownMenuItem
+          data-testid='theme-light'
+          onClick={() => {
+            setTheme('light');
+          }}
+        >
           <Sun className='mr-2 h-[1.2rem] w-[1.2rem]' />
           Light
         </DropdownMenuItem>
-        <DropdownMenuItem data-testid='theme-dark' onClick={() => setTheme('dark')}>
+        <DropdownMenuItem
+          data-testid='theme-dark'
+          onClick={() => {
+            setTheme('dark');
+          }}
+        >
           <MoonStar className='mr-2 h-[1.2rem] w-[1.2rem]' />
           Dark
         </DropdownMenuItem>
-        <DropdownMenuItem data-testid='theme-system' onClick={() => setTheme('system')}>
+        <DropdownMenuItem
+          data-testid='theme-system'
+          onClick={() => {
+            setTheme('system');
+          }}
+        >
           <Laptop className='mr-2 h-[1.2rem] w-[1.2rem]' />
           System
         </DropdownMenuItem>
