@@ -1,5 +1,4 @@
-/** @type {import("prettier").Config} */
-module.exports = {
+export default {
   printWidth: 100,
   tabWidth: 2,
   useTabs: false,
@@ -10,7 +9,7 @@ module.exports = {
   bracketSpacing: true,
   bracketSameLine: false,
   arrowParens: 'always',
-  endOfLine: 'crlf',
+  endOfLine: 'lf',
   plugins: [
     '@ianvs/prettier-plugin-sort-imports',
     'prettier-plugin-tailwindcss' // must be last
@@ -22,6 +21,8 @@ module.exports = {
     '<TYPES>^[.]',
     '',
     '<THIRD_PARTY_MODULES>',
+    '',
+    '^[~]/',
     '',
     '^[@]/',
     '',
