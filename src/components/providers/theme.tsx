@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 
-import EStorageKeys from '../../constants/keys';
+import { storageKeys } from '@/lib/constants/keys';
 
 type Theme = 'dark' | 'light' | 'system';
 
@@ -26,7 +26,7 @@ const ThemeProviderContext = createContext<ThemeProviderState>(initialState);
 export default function ThemeProvider({
   children,
   defaultTheme = 'system',
-  storageKey = EStorageKeys.theme,
+  storageKey = storageKeys.theme,
   ...properties
 }: ThemeProviderProperties) {
   const [theme, setTheme] = useState<Theme>(
