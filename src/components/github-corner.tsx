@@ -1,5 +1,3 @@
-import React from 'react';
-
 type TGithubCorner = {
   title: string;
   url: string;
