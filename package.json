@@ -11,6 +11,7 @@
     "type": "git",
     "url": "https://github.com/doinel1a/vite-react-ts-shadcn-ui"
   },
+  "packageManager": "pnpm@10.5.0",
   "scripts": {
     "postinstall": "husky & playwright install",
     "dev": "vite",
