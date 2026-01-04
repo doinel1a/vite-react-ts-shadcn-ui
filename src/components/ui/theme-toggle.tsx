@@ -1,7 +1,5 @@
 'use client';
 
-import * as React from 'react';
-
 import { IconDeviceLaptop, IconMoonStars, IconSun } from '@tabler/icons-react';
 
 import { Button } from '@/components/ui/button';

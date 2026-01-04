@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { BrowserRouter } from 'react-router-dom';
 
 import Counter from './components/counter';
@@ -12,7 +10,7 @@ function App() {
   return (
     <BrowserRouter>
       <RootProvider>
-        <div className='grid min-h-[100dvh] grid-rows-[auto_1fr_auto]'>
+        <div className='grid min-h-dvh grid-rows-[auto_1fr_auto]'>
           <Navbar />
           <main className='flex h-full flex-col items-center justify-center'>
             <GithubCorner
