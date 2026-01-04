@@ -33,7 +33,7 @@
       "~/*": ["./*"]
     }
   },
-  "include": ["src", ".eslintrc.cjs", "**/*.tsx", "**/*.cjs", "**/*.js"],
+  "include": ["src", ".eslintrc.cjs", "**/*.tsx", "**/*.cjs", "**/*.js", "lint-staged.config.ts", "eslint.config.ts", "commitlint.config.ts", "prettier.config.ts", "postcss.config.ts"],
   "exclude": ["node_modules"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
