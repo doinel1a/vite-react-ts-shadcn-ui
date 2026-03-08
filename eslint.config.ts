@@ -1,16 +1,17 @@
 import prettierConfig from 'eslint-config-prettier/flat';
 import prettierPlugin from 'eslint-plugin-prettier/recommended';
-import sonarjs from 'eslint-plugin-sonarjs';
+import { configs as sonarjs } from 'eslint-plugin-sonarjs';
 import unicorn from 'eslint-plugin-unicorn';
+import { defineConfig } from 'eslint/config';
 import tseslint from 'typescript-eslint';
 
-export default tseslint.config(
+export default defineConfig(
   {
     ignores: ['dist']
   },
   prettierConfig,
   prettierPlugin,
-  sonarjs.configs.recommended,
+  sonarjs.recommended,
   unicorn.configs.recommended,
   {
     files: ['**/*.ts', '**/*.tsx'],
@@ -32,7 +33,8 @@ export default tseslint.config(
       '@typescript-eslint/no-misused-promises': [
         'error',
         { checksVoidReturn: { attributes: false } }
-      ]
+      ],
+      '@typescript-eslint/restrict-template-expressions': ['error', { allowNumber: true }]
     }
   },
   {
