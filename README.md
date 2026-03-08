@@ -21,7 +21,7 @@
 # Vite React TypeScript & Shadcn/ui — Template
 
 This development starter template is the ultimate solution to help you getting started on your project in no time, without the hassle of setting up and configuring your development environment from scratch each time you start working.
-This repository is ideal for front-end developers who want to build modern, fast and reliable web applications with the latest cutting edge technologies such as **React 19**, **TypeScript**, **Shadcn/ui**, **TailwindCSS 4**, **ESLint 9**, **Prettier**, **Husky**, **Vite 7** and much more!
+This repository is ideal for front-end developers who want to build modern, fast and reliable web applications with the latest cutting edge technologies such as **React 19**, **TypeScript**, **Shadcn/ui**, **TailwindCSS 4**, **ESLint 10**, **Prettier**, **Husky**, **Vite 7** and much more!
 
 ---
 
@@ -79,7 +79,7 @@ This repository comes 🔋 packed with:
 - **Shadcn/ui**;
 - **TailwindCSS 4**;
 - **SASS** & **SCSS**;
-- **ESLint 9**;
+- **ESLint 10**;
 - **Prettier**;
 - **Husky**;
 - **Commitlint**;
