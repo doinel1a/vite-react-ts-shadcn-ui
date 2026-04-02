@@ -1,5 +1,6 @@
-import config from '_config';
 import test, { expect } from '@playwright/test';
+
+import config from '~/_config';
 
 test.describe('Test counter', () => {
   test.beforeEach(async ({ page }) => {

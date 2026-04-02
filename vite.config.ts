@@ -11,6 +11,7 @@ import config from './_config';
 export default defineConfig({
   resolve: {
     alias: {
+      "~": path.resolve(__dirname, "."),
       "@": path.resolve(__dirname, "./src"),
     },
   },
@@ -18,7 +19,7 @@ export default defineConfig({
     react(),
     {
       name: 'dynamic-html',
-      transformIndexHtml(html) {
+      transformIndexHtml(html: string) {
         return html
           .replace(/%TITLE%/g, config.metadata.title)
           .replace(/%DESCRIPTION%/g, config.metadata.description)
