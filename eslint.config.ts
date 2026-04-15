@@ -1,5 +1,6 @@
 import prettierConfig from 'eslint-config-prettier/flat';
 import prettierPlugin from 'eslint-plugin-prettier/recommended';
+import reactCompiler from 'eslint-plugin-react-compiler';
 import { configs as sonarjs } from 'eslint-plugin-sonarjs';
 import unicorn from 'eslint-plugin-unicorn';
 import { defineConfig } from 'eslint/config';
@@ -13,6 +14,7 @@ export default defineConfig(
   prettierPlugin,
   sonarjs.recommended,
   unicorn.configs.recommended,
+  reactCompiler.configs.recommended,
   {
     files: ['**/*.ts', '**/*.tsx'],
     extends: [
