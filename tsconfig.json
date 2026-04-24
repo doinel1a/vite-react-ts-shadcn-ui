@@ -69,6 +69,6 @@
     "skipLibCheck": true
   },
   "include": ["src", "**/*.ts", "**/*.tsx"],
-  "exclude": ["vite.config.ts", "lint-staged.config.ts", "playwright.config.ts", "node_modules"],
+  "exclude": ["node_modules", "_config.ts", "lint-staged.config.ts", "playwright.config.ts", "vite.config.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

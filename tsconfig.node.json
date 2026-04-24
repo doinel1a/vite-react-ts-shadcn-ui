@@ -1,10 +1,18 @@
 {
   "compilerOptions": {
-    "strictNullChecks": true,
+    // ==========================================================================
+    // MODULES
+    // ==========================================================================
     "composite": true,
     "module": "esnext",
     "moduleResolution": "bundler",
+    "types": ["node"],
+
+    // ==========================================================================
+    // TYPE CHECKING
+    // ==========================================================================
+    "strictNullChecks": true,
     "allowSyntheticDefaultImports": true
   },
-  "include": ["vite.config.ts"]
+  "include": ["_config.ts", "lint-staged.config.ts", "playwright.config.ts", "vite.config.ts"]
 }
