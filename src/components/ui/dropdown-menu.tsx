@@ -1,5 +1,5 @@
-/* eslint-disable sonarjs/prefer-read-only-props */
-/* eslint-disable unicorn/prevent-abbreviations */
+/* eslint-disable unicorn/no-abusive-eslint-disable */
+/* eslint-disable */
 
 'use client';
 

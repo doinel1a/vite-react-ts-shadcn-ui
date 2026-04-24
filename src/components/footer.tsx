@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 
-export default function Footer() {
-  const year = new Date().getFullYear();
+const year = new Date().getFullYear();
 
+export default function Footer() {
   return (
     <footer className='border-border flex h-10 w-full items-center justify-center border-t text-sm'>
       by &nbsp;

@@ -1,11 +1,13 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, use, useEffect, useState } from 'react';
+
+import type { ReactNode } from 'react';
 
 import { storageKeys } from '@/lib/constants/keys';
 
 type Theme = 'dark' | 'light' | 'system';
 
 type ThemeProvider = {
-  children: React.ReactNode;
+  children: ReactNode;
   defaultTheme?: Theme;
   storageKey?: string;
 };
@@ -58,14 +60,14 @@ export default function ThemeProvider({
   };
 
   return (
-    <ThemeProviderContext.Provider {...properties} value={value}>
+    <ThemeProviderContext {...properties} value={value}>
       {children}
-    </ThemeProviderContext.Provider>
+    </ThemeProviderContext>
   );
 }
 
 export const useTheme = () => {
-  const context = useContext(ThemeProviderContext);
+  const context = use(ThemeProviderContext);
   // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   if (context == undefined) {
     throw new Error('useTheme must be used within a ThemeProvider');

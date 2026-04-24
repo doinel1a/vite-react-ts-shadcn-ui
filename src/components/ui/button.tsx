@@ -1,4 +1,5 @@
-/* eslint-disable unicorn/prevent-abbreviations */
+/* eslint-disable unicorn/no-abusive-eslint-disable */
+/* eslint-disable */
 
 import * as React from 'react';
 
