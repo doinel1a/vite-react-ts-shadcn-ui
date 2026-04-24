@@ -19,8 +19,8 @@ export default function ThemeToggle() {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button data-testid='theme-toggle' variant='outline' size='icon'>
-          <IconSun className='h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90' />
-          <IconMoonStars className='absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0' />
+          <IconSun className='size-4 scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90' />
+          <IconMoonStars className='absolute size-4 scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0' />
           <span className='sr-only'>Toggle theme</span>
         </Button>
       </DropdownMenuTrigger>
@@ -31,7 +31,7 @@ export default function ThemeToggle() {
             setTheme('light');
           }}
         >
-          <IconSun className='mr-2 h-[1.2rem] w-[1.2rem]' />
+          <IconSun className='size-4' />
           Light
         </DropdownMenuItem>
         <DropdownMenuItem
@@ -40,7 +40,7 @@ export default function ThemeToggle() {
             setTheme('dark');
           }}
         >
-          <IconMoonStars className='mr-2 h-[1.2rem] w-[1.2rem]' />
+          <IconMoonStars className='size-4' />
           Dark
         </DropdownMenuItem>
         <DropdownMenuItem
@@ -49,7 +49,7 @@ export default function ThemeToggle() {
             setTheme('system');
           }}
         >
-          <IconDeviceLaptop className='mr-2 h-[1.2rem] w-[1.2rem]' />
+          <IconDeviceLaptop className='size-4' />
           System
         </DropdownMenuItem>
       </DropdownMenuContent>
