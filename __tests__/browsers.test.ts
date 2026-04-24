@@ -1,9 +1,7 @@
 import { expect, test } from '@playwright/test';
 
-import config from '../_config';
-
 test('Test browsers', async ({ page }) => {
-  await page.goto(`http://${config.server.host}:${config.server.port}`);
+  await page.goto('/');
 
-  await expect(page).toHaveTitle(config.metadata.title);
+  await expect(page).toHaveTitle('Vite React.js TypeScript & Shadcn/ui — Template');
 });
