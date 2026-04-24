@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@t3-oss/env-core':
+        specifier: 0.13.11
+        version: 0.13.11(typescript@6.0.2)(zod@4.3.6)
       '@tabler/icons-react':
         specifier: 3.41.1
         version: 3.41.1(react@19.2.4)
@@ -35,6 +38,9 @@ importers:
       tailwind-merge:
         specifier: 3.5.0
         version: 3.5.0
+      zod:
+        specifier: 4.3.6
+        version: 4.3.6
     devDependencies:
       '@commitlint/cli':
         specifier: 20.5.0
@@ -1646,6 +1652,23 @@ packages:
   '@sindresorhus/merge-streams@4.0.0':
     resolution: {integrity: sha512-tlqY9xq5ukxTUZBmoOp+m61cqwQD5pHJtFY3Mn8CA8ps6yghLH/Hw8UPdqg4OLmFW3IFlcXnQNmo/dh8HzXYIQ==}
     engines: {node: '>=18'}
+
+  '@t3-oss/env-core@0.13.11':
+    resolution: {integrity: sha512-sM7GYY+KL7H/Hl0BE0inWfk3nRHZOLhmVn7sHGxaZt9FAR6KqREXAE+6TqKfiavfXmpRxO/OZ2QgKRd+oiBYRQ==}
+    peerDependencies:
+      arktype: ^2.1.0
+      typescript: '>=5.0.0'
+      valibot: ^1.0.0-beta.7 || ^1.0.0
+      zod: ^3.24.0 || ^4.0.0
+    peerDependenciesMeta:
+      arktype:
+        optional: true
+      typescript:
+        optional: true
+      valibot:
+        optional: true
+      zod:
+        optional: true
 
   '@tabler/icons-react@3.41.1':
     resolution: {integrity: sha512-kUgweE+DJtAlMZVIns1FTDdcbpRVnkK7ZpUOXmoxy3JAF0rSHj0TcP4VHF14+gMJGnF+psH2Zt26BLT6owetBA==}
@@ -6050,6 +6073,11 @@ snapshots:
   '@simple-libs/stream-utils@1.2.0': {}
 
   '@sindresorhus/merge-streams@4.0.0': {}
+
+  '@t3-oss/env-core@0.13.11(typescript@6.0.2)(zod@4.3.6)':
+    optionalDependencies:
+      typescript: 6.0.2
+      zod: 4.3.6
 
   '@tabler/icons-react@3.41.1(react@19.2.4)':
     dependencies:
