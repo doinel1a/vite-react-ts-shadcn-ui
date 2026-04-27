@@ -1,5 +1,5 @@
-import './styles/global.scss';
-import './styles/global.css';
+import '@/styles/global.scss';
+import '@/styles/global.css';
 
 import { StrictMode } from 'react';
 

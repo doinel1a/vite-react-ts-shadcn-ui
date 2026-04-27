@@ -6,7 +6,8 @@ const env = createEnv({
   client: {
     VITE_PLACEHOLDER: z.string()
   },
-  runtimeEnv: import.meta.env
+  runtimeEnv: import.meta.env,
+  emptyStringAsUndefined: true
 });
 
 export type Env = typeof env;
