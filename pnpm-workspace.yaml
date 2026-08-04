@@ -1,6 +1,4 @@
-onlyBuiltDependencies:
-  - '@parcel/watcher'
-  - '@swc/core'
-  - '@tailwindcss/oxide'
-  - esbuild
-  - msw
+allowBuilds:
+  '@parcel/watcher': true
+  esbuild: true
+  msw: true
