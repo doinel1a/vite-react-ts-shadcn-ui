@@ -6,7 +6,7 @@ import GithubCorner from './components/github-corner';
 import Navbar from './components/navbar';
 import RootProvider from './components/providers/root';
 
-function App() {
+export default function App() {
   return (
     <RootProvider>
       <BrowserRouter>
@@ -25,5 +25,3 @@ function App() {
     </RootProvider>
   );
 }
-
-export default App;

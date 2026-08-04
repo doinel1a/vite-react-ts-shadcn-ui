@@ -1,4 +1,5 @@
 /* eslint-disable unicorn/prefer-string-replace-all */
+/* eslint-disable unicorn/no-unsafe-string-replacement */
 
 import path from 'node:path';
 
